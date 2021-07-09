@@ -3,7 +3,7 @@
 #include "constantes.h"
 class mapa{
 private:
-    objeto ***objetos;
+    Objeto ***objetos;
     int cant_humanos;
     int cant_vampiros;
     int cant_zombis;

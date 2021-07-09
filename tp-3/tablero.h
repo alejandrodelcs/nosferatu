@@ -2,7 +2,7 @@
 #define NOSFERATU_TABLERO_H
 #include "objeto.h"
 
-class Tablero: public Objeto{
+class Tablero {
 protected:
     Objeto ***pObjeto;
     int abscisa;
@@ -11,7 +11,7 @@ public:
     Tablero();
     Tablero(int fila, int columna);
     void imprimirTablero();
-    ~Tablero() override;
+    ~Tablero() ;
 };
 
 #endif //NOSFERATU_TABLERO_H

@@ -1,7 +1,3 @@
-//
-// Created by alejandro on 06/07/2021.
-//
-
 #include "tablero.h"
 
 Tablero::Tablero() {
@@ -57,5 +53,6 @@ Tablero::~Tablero() {
     delete[] pObjeto;
     pObjeto = nullptr;
 }
+
 
 

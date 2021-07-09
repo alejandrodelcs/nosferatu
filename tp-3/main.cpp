@@ -1,7 +1,8 @@
 #include <iostream>
 #include "mapa.h"
+#include "interacciones.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    Interacciones i;
+    i.cargarMatriz();
 }
