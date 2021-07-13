@@ -43,7 +43,7 @@ public:
 
 template <typename Clave, typename Valor>
 NodoAB<Clave,Valor>::NodoAB(){
-	clave = "";
+	clave = 0;
 	valor = nullptr;
 	izquierdo = nullptr;
 	derecho = nullptr;
@@ -144,7 +144,8 @@ bool NodoAB<Clave,Valor>::esHoja(){
 
 //template <typename Clave, typename Valor>
 //NodoAB<Clave,Valor>::~NodoAB(){
-//	delete valor;
+//	if (valor != nullptr)
+//		delete valor;
 //}
 
 #endif /* NODOAB_H_ */
