@@ -14,6 +14,7 @@ private:
 	void imprimirArbol(NodoAB<Clave, Valor>* raiz);
 
 	NodoAB<Clave, Valor>* buscar(Clave clave, NodoAB<Clave, Valor>* raiz);
+	bool esta(Clave clave, NodoAB<Clave, Valor>* raiz);
 
 	void eliminarNodo(NodoAB<Clave, Valor>* nodo_eliminar);
 	void eliminarHoja(NodoAB<Clave, Valor>* nodo_eliminar);
@@ -33,6 +34,8 @@ public:
 
 	//PRE: La clave se encuentra en el arbol
 	Valor buscar(Clave clave);
+
+	bool esta(Clave clave);
 
 	void eliminarNodo(Clave clave);
 
@@ -128,6 +131,24 @@ Valor ArbolBB<Clave,Valor>::buscar(Clave clave){
 	NodoAB<Clave, Valor>* nodo = buscar(clave, raiz);
 	return nodo->obtenerValor();
 
+}
+
+template <typename Clave, typename Valor>
+bool ArbolBB<Clave,Valor>::esta(Clave clave, NodoAB<Clave,Valor>* nodo){
+	if (nodo == nullptr)
+		return false;
+	else if (clave == nodo->obtenerClave())
+		return true;
+	else if (clave < nodo->obtenerClave())
+		return esta(clave, nodo->obtenerIzquierdo());
+	else
+		return esta(clave, nodo->obtenerDerecho());
+}
+
+
+template <typename Clave, typename Valor>
+bool ArbolBB<Clave,Valor>::esta(Clave clave){
+	return esta(clave, raiz);
 }
 
 

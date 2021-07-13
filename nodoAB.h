@@ -43,7 +43,7 @@ public:
 
 template <typename Clave, typename Valor>
 NodoAB<Clave,Valor>::NodoAB(){
-	clave = 0;
+	clave = " ";
 	valor = nullptr;
 	izquierdo = nullptr;
 	derecho = nullptr;
