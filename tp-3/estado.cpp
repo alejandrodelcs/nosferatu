@@ -29,4 +29,8 @@ int Estado::devolverPosy() {
     return stoi(coordenada.substr(int(coordenada.find(',')) + 2, int(coordenada.find(')')) - 2));
 }
 
+std::string Estado::devolverId() {
+    return (int(lineaArchivo.find(')')) != -1) ? lineaArchivo.substr(lineaArchivo.find(')')+2) : "";
+}
+
 #include "estado.h"

@@ -20,10 +20,10 @@ vampiro (5, 9) 220
 bala 5 (1, 10) 370
 humano (4, 12) 039
 Vampirella (2, 13) 201
-estaca (2, 15) 
-agua 7 (5, 15)
-humano CV (9, 10)
-humano CV (7, 11)
-bala 20 (8, 13)
-escopeta (10, 14)
-vampiro (9, 15)
+estaca (2, 15) 388
+agua 7 (5, 15) 336
+humano CV (9, 10) 005
+humano CV (7, 11) 013
+bala 20 (8, 13) 363
+escopeta (10, 14) 348
+vampiro (9, 15) 250

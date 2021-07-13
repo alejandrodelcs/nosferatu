@@ -31,7 +31,7 @@ Tablero* Interacciones::cargarMatriz() {
 
         while(getline(archivo,lineaArchivo)){
             Estado estado(lineaArchivo);
-            std::cout<<estado.devolverCantidad()<<std::endl; //PRUEBA
+            std::cout<<estado.devolverId()<<std::endl; //PRUEBA
         }
     }else{
         std::cerr<<"ERROR!...el Archivo"<<PATH<<"No se abrio"<<std::endl;

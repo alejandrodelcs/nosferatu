@@ -29,6 +29,10 @@ public:
     //POST: devuelve la coordenada en Y del objeto
     int devolverPosy();
 
+    //PRE:
+    //POST:
+    std::string devolverId();
+
 };
 
 #endif //NOSFERATU_ESTADO_H

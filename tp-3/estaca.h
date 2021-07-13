@@ -12,6 +12,7 @@ public:
     //int devolverCantidad() override;
 
     void mostrar();
+
 };
 
 #endif //TP2_ESTACA_H

@@ -8,6 +8,6 @@
 //	this->id = id;
 //}
 
-int Elemento::obtenerCantidad(){
+__attribute__((unused)) int Elemento::obtenerCantidad(){
 	return cantidad;
 }

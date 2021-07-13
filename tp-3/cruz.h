@@ -12,6 +12,7 @@ public:
     //int devolverCantidad();
 
     void mostrar() override;
+
 };
 
 #endif //TP2_CRUZ_H

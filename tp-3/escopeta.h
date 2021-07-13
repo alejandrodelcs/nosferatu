@@ -12,6 +12,7 @@ public:
     //int devolverCantidad();
 
     void mostrar();
+
 };
 
 #endif //TP2_ESCOPETA_H

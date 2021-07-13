@@ -9,8 +9,9 @@ protected:
     int fila;
     int columna;
     std::string id;
-    std::string simbolo;
+
 public:
+    std::string simbolo;
 
     //POST:Muestra informacion del objeto
     virtual void mostrar() = 0;

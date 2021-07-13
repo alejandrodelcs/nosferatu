@@ -7,7 +7,7 @@ protected:
 	int cantidad;
 public:
 	//Elemento(int fila, int columna, int cantidad, std::string id);
-	virtual int obtenerCantidad();
+    int obtenerCantidad();
 };
 
 #endif //TP2_ELEMENTO_H
