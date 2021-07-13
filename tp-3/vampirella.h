@@ -4,17 +4,11 @@
 
 class Vampirella : public Vampiro {
 public:
-    Vampirella(int fila, int columna);
+    Vampirella(int fila, int columna, std::string id, int vida, int ataque);
 
-    std::string devolverSimbolo() override;
+    std::string obtenerSimbolo();
 
-    int devolverCantidad() override;
-
-    int devolverFila() override;
-
-    int devolverColumna() override;
-
-    void mostrar() override;
+    void mostrar();
 
 };
 

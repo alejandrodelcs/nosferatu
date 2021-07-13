@@ -1,27 +1,21 @@
 #include "escopeta.h"
 
-Escopeta::Escopeta(int fila, int columna) {
+Escopeta::Escopeta(int fila, int columna, std::string id, int cantidad){
     this->fila = fila;
     this->columna = columna;
     this->simbolo = "E";
+    this->id = id;
     this->cantidad = 1;
 }
 
-std::string Escopeta::devolverSimbolo() {
+std::string Escopeta::obtenerSimbolo() {
     return simbolo;
 }
 
-int Escopeta::devolverCantidad() {
-    return cantidad;
-}
+//int Escopeta::devolverCantidad() {
+//    return cantidad;
+//}
 
-int Escopeta::devolverFila() {
-    return fila;
-}
-
-int Escopeta::devolverColumna() {
-    return columna;
-}
 
 void Escopeta::mostrar() {
     std::cout << "escopeta" << std::endl;

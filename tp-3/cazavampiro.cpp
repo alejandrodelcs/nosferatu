@@ -1,29 +1,20 @@
 #include "cazavampiro.h"
 
-Cazavampiro::Cazavampiro(int fila, int columna) {
+Cazavampiro::Cazavampiro(int fila, int columna, std::string id, int vida, int ataque) : Humano(fila, columna, id, vida, ataque) {
     this->fila = fila;
     this->columna = columna;
     this->simbolo = "H";
-    this->cantidad = 1;
+    this->id = id;
+    this->vida = vida;
+    this->ataque = ataque;
 }
 
-std::string Cazavampiro::devolverSimbolo() {
+std::string Cazavampiro::obtenerSimbolo() {
     return simbolo;
 }
 
 void Cazavampiro::mostrar() {
-    std::cout << "Vanesa Helsin" << std::endl;
+    std::cout << "Vanesa Helsing" << std::endl;
 }
 
-int Cazavampiro::devolverCantidad() {
-    return cantidad;
-}
-
-int Cazavampiro::devolverFila() {
-    return fila;
-}
-
-int Cazavampiro::devolverColumna() {
-    return columna;
-}
 

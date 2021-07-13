@@ -5,17 +5,9 @@
 
 class Cazavampiro : public Humano {
 public:
-    Cazavampiro() = default;;
+    Cazavampiro(int fila, int columna, std::string id, int vida, int ataque);
 
-    Cazavampiro(int fila, int columna);
-
-    std::string devolverSimbolo();
-
-    int devolverCantidad();
-
-    int devolverFila() override;
-
-    int devolverColumna();
+    std::string obtenerSimbolo();
 
     void mostrar();
 };

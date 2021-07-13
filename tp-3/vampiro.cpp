@@ -1,27 +1,18 @@
 #include "vampiro.h"
 
-Vampiro::Vampiro(int fila, int columna) {
+Vampiro::Vampiro(int fila, int columna, std::string id, int vida, int ataque) {
     this->fila = fila;
     this->columna = columna;
     this->simbolo = "v";
-    this->cantidad = 1;
+    this->id = id;
+    this->vida = vida;
+    this->ataque = ataque;
 }
 
-std::string Vampiro::devolverSimbolo() {
+std::string Vampiro::obtenerSimbolo() {
     return simbolo;
 }
 
-int Vampiro::devolverCantidad() {
-    return cantidad;
-}
-
-int Vampiro::devolverFila() {
-    return fila;
-}
-
-int Vampiro::devolverColumna() {
-    return columna;
-}
 
 void Vampiro::mostrar() {
     std::cout << "Vampiro" << std::endl;

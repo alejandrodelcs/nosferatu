@@ -5,19 +5,15 @@
 
 class Humano : public Ser {
 public:
-    Humano(int ancho, int alto);
+    Humano(int fila, int columna, std::string id, int vida, int ataque);
 
-    Humano() = default;
+    std::string obtenerSimbolo();
 
-    std::string devolverSimbolo() override;
+    void mostrar();
 
-    int devolverCantidad() override;
+    void atacar();
 
-    int devolverFila() override;
-
-    int devolverColumna() override;
-
-    void mostrar() override;
+    void defender();
 };
 
 #endif //TP2_HUMANO_H

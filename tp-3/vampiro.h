@@ -5,19 +5,11 @@
 
 class Vampiro : public Monstruo {
 public:
-    Vampiro(int fila, int columna);
+    Vampiro(int fila, int columna, std::string id, int vida, int ataque);
 
-    Vampiro() = default;
+    std::string obtenerSimbolo();
 
-    std::string devolverSimbolo() override;
-
-    int devolverCantidad() override;
-
-    int devolverFila() override;
-
-    int devolverColumna() override;
-
-    void mostrar() override;
+    void mostrar();
 
 };
 

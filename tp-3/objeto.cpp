@@ -1,12 +1,14 @@
 #include "objeto.h"
 
-Objeto::Objeto() {
-    this->fila = 0;
-    this->columna = 0;
-    this->cantidad = 0;
+int Objeto::obtenerFila(){
+	return fila;
 }
 
-void Objeto::mostrar() {
-    std::cout << this->fila << this->columna << std::endl;
+int Objeto::obtenerColumna(){
+	return columna;
 }
 
+
+std::string Objeto::obtenerId(){
+	return id;
+}

@@ -5,17 +5,11 @@
 
 class Vanesa : public Cazavampiro {
 public:
-    Vanesa(int fila, int columna);
+    Vanesa(int fila, int columna, std::string id, int vida, int ataque);
 
-    std::string devolverSimbolo() override;
+    std::string obtenerSimbolo();
 
-    int devolverCantidad() override;
-
-    int devolverFila() override;
-
-    int devolverColumna() override;
-
-    void mostrar() override;
+    void mostrar();
 
 };
 

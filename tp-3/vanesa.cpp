@@ -1,28 +1,19 @@
 #include "vanesa.h"
 
-Vanesa::Vanesa(int fila, int columna) {
+Vanesa::Vanesa(int fila, int columna, std::string id, int vida, int ataque) : Cazavampiro(fila, columna, id, vida, ataque){
     this->fila = fila;
     this->columna = columna;
     this->simbolo = "W";
-    this->cantidad = 1;
+    this->id = id;
+    this->vida = vida;
+    this->ataque = ataque;
 }
 
-std::string Vanesa::devolverSimbolo() {
+std::string Vanesa::obtenerSimbolo() {
     return simbolo;
 }
 
-int Vanesa::devolverCantidad() {
-    return cantidad;
-}
-
-int Vanesa::devolverFila() {
-    return fila;
-}
-
-int Vanesa::devolverColumna() {
-    return columna;
-}
 
 void Vanesa::mostrar() {
-    std::cout << "Vanesa Helsin" << std::endl;
+    std::cout << "Vanesa Helsing" << std::endl;
 }

@@ -5,15 +5,11 @@
 
 class Balas : public Elemento {
 public:
-    Balas(int fila, int columna, int cantidad);
+    Balas(int fila, int columna, std::string id, int cantidad);
 
-    std::string devolverSimbolo() override;
+    std::string obtenerSimbolo();
 
-    int devolverCantidad() override;
-
-    int devolverFila() override;
-
-    int devolverColumna() override;
+    //int devolverCantidad();
 
     void mostrar() override;
 };

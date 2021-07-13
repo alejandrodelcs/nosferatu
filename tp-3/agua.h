@@ -5,17 +5,13 @@
 
 class Agua : public Elemento {
 public:
-    Agua(int fila, int columna, int cantidad);
+    Agua(int fila, int columna, std::string id, int cantidad);
 
-    std::string devolverSimbolo() override;
+    std::string obtenerSimbolo();
 
-    int devolverCantidad() override;
+    //int devolverCantidad() override;
 
-    int devolverFila() override;
-
-    int devolverColumna() override;
-
-    void mostrar() override;
+    void mostrar();
 };
 
 #endif //TP2_AGUA_H

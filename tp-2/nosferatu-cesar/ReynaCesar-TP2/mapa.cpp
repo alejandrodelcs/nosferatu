@@ -24,7 +24,7 @@ void mapa::cambiar_col(int alto){
 }
 
 int mapa::crear(){
-    std::ifstream archivo("estado.txt");
+    std::ifstream archivo("../estado.txt");
     std::string nombre;
     std::string especial;
     std::string alto;

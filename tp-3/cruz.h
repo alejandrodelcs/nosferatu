@@ -5,15 +5,11 @@
 
 class Cruz : public Elemento {
 public:
-    Cruz(int fila, int columna);
+    Cruz(int fila, int columna, std::string id, int cantidad);
 
-    std::string devolverSimbolo() override;
+    std::string obtenerSimbolo() override;
 
-    int devolverCantidad() override;
-
-    int devolverFila() override;
-
-    int devolverColumna() override;
+    //int devolverCantidad();
 
     void mostrar() override;
 };

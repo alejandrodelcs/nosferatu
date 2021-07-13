@@ -1,13 +1,14 @@
 #include "agua.h"
 
-Agua::Agua(int fila, int columna, int cantidad) {
+Agua::Agua(int fila, int columna, std::string id, int cantidad){
     this->fila = fila;
     this->columna = columna;
     this->cantidad = cantidad;
+    this->id = id;
     this->simbolo = "a";
 }
 
-std::string Agua::devolverSimbolo() {
+std::string Agua::obtenerSimbolo() {
     return simbolo;
 }
 
@@ -15,14 +16,7 @@ void Agua::mostrar() {
     std::cout << "agua" << std::endl;
 }
 
-int Agua::devolverFila() {
-    return fila;
-}
 
-int Agua::devolverColumna() {
-    return columna;
-}
-
-int Agua::devolverCantidad() {
-    return cantidad;
-}
+//int Agua::devolverCantidad() {
+//    return cantidad;
+//}

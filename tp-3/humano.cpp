@@ -1,30 +1,26 @@
 #include "humano.h"
 
-Humano::Humano(int ancho, int alto) {
-    this->fila = ancho;
-    this->columna = alto;
+Humano::Humano(int fila, int columna, std::string id, int vida, int ataque){
+    this->fila = fila;
+    this->columna = columna;
     this->simbolo = "h";
-    this->cantidad = 1;
+    this->id = id;
+    this->vida = vida;
+    this->ataque = ataque;
 }
 
-std::string Humano::devolverSimbolo() {
+std::string Humano::obtenerSimbolo() {
     return simbolo;
-}
-
-int Humano::devolverCantidad() {
-    return cantidad;
-}
-
-int Humano::devolverFila() {
-    return fila;
-}
-
-int Humano::devolverColumna() {
-    return columna;
 }
 
 void Humano::mostrar() {
     std::cout << "humano" << std::endl;
 }
 
+void Humano::atacar(){
+	std::cout << "ataco" << std::endl;
+}
 
+void Humano::defender(){
+	std::cout << "defiendo" << std::endl;
+}

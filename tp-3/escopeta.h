@@ -5,17 +5,13 @@
 
 class Escopeta : public Elemento {
 public:
-    Escopeta(int fila, int columna);
+    Escopeta(int fila, int columna, std::string id, int cantidad);
 
-    std::string devolverSimbolo() override;
+    std::string obtenerSimbolo();
 
-    int devolverCantidad() override;
+    //int devolverCantidad();
 
-    int devolverFila() override;
-
-    int devolverColumna() override;
-
-    void mostrar() override;
+    void mostrar();
 };
 
 #endif //TP2_ESCOPETA_H

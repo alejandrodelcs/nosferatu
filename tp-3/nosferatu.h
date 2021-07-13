@@ -5,15 +5,9 @@
 
 class Nosferatu : public Vampiro {
 public:
-    Nosferatu(int fila, int col);
+    Nosferatu(int fila, int columna, std::string id, int vida, int ataque);
 
-    std::string devolverSimbolo() override;
-
-    int devolverCantidad() override;
-
-    int devolverFila() override;
-
-    int devolverColumna() override;
+    std::string obtenerSimbolo();
 
     void mostrar() override;
 };
