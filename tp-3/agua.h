@@ -7,7 +7,7 @@ class Agua : public Elemento {
 public:
     Agua(int fila, int columna, std::string id, int cantidad);
 
-    std::string obtenerSimbolo() override;
+    std::string obtenerSimbolo();
 
     //int devolverCantidad() override;
 

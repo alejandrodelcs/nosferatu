@@ -23,6 +23,8 @@ void mapa::cambiar_col(int alto){
     col=alto;
 }
 
+/*
+
 int mapa::crear(){
     std::ifstream archivo("../estado.txt");
     std::string nombre;
@@ -329,7 +331,7 @@ void mapa::buscar_vampiro(int cuadrante){
     for (int i = 0; i < filas; ++i) {
         for (int j = 0; j < col; ++j) {
             if ((cuadrante == 1 && objetos[i][j]!= nullptr) && (objetos[i][j]->dar_simbolo()==c_vampiro ||
-                                     objetos[i][j]->dar_simbolo()==c_Nosferatu||
+                                     objetos[i][j]->dar_imbolo()==c_Nosferatu||
                                      objetos[i][j]->dar_simbolo()==c_Vampirella)
                                      && (objetos[i][j]->dar_fila() < filas/2 && objetos[i][j]->dar_col() <col/2)) {
                 esta = true;
@@ -415,3 +417,4 @@ mapa::~mapa() {
     delete []objetos;
     objetos=nullptr;
 }
+*/

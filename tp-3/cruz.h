@@ -7,11 +7,11 @@ class Cruz : public Elemento {
 public:
     Cruz(int fila, int columna, std::string id, int cantidad);
 
-    std::string obtenerSimbolo() override;
+    std::string obtenerSimbolo();
 
     //int devolverCantidad();
 
-    void mostrar() override;
+    void mostrar();
 
 };
 

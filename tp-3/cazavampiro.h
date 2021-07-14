@@ -7,7 +7,7 @@ class Cazavampiro : public Humano {
 public:
     Cazavampiro(int fila, int columna, std::string id);
 
-    std::string obtenerSimbolo() override;
+    std::string obtenerSimbolo();
 
     void mostrar();
 };

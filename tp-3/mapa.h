@@ -25,54 +25,54 @@ public:
     /*PRE::exista el archivo y que las filas y columnas sean pares
      * POST::Crea el tablero y lo completa
      */
-    int crear();
+    //int crear();
     /*
      * PRE::
      * POST::busca un objeto por cuadrante
      */
-    void buscar_objetos(int cuadrante ,const std::string& objetos);
+    //void buscar_objetos(int cuadrante ,const std::string& objetos);
 
     /*
      * POST::elimina un objeto
      */
-    void dar_baja();
+    //void dar_baja();
     /*PRE:el espacio este vacio
      * POST::crea un objeto en el lugar seleccionado
      */
-    void dar_alta();
+    //void dar_alta();
     /*
      * POST:muestra la informacion de los objetos en el tablero
      */
-    void mostrar_informacion();
+   //void mostrar_informacion();
     /*
      * POST::lanza la opcion para inicar las busquedas de objeto
      */
-    void buscar();
+    //void buscar();
     /*
      * POST::muestra el tablero
      */
-    void mostrar();
+    //void mostrar();
     /*
      * POST:elimina el talbero
      */
-    ~mapa();
+    //~mapa();
 private:
     /*
     *POST::busca humanos
     */
-    void buscar_humano(int cuadrante);
+    //void buscar_humano(int cuadrante);
     /*
      *POST::busca vampiros
      */
-    void buscar_vampiro(int cuadrante);
+    //void buscar_vampiro(int cuadrante);
     /*
      *POST::busca los elementos
      */
-    void buscar_otros(int cuadrante,const std::string& objeto);
+    //void buscar_otros(int cuadrante,const std::string& objeto);
     /*
      *POST::crea el tablero
      */
-    void crear_tablero();
+    //void crear_tablero();
     /*
      *POST::cambia las filas del tablero
      */
@@ -82,31 +82,31 @@ private:
      */
     void cambiar_col(int alto);
     //POST::crea un humano
-    void crear_humano(int ancho,int alto);
+    //void crear_humano(int ancho,int alto);
     //POST::crea un cazavampiros
-    void crear_cazador(int ancho,int alto);
+    //void crear_cazador(int ancho,int alto);
     //PRE::no exista una Vanesa previa
     //POST::crea a Vanesa
-    void crear_Vanesa(int ancho,int alto);
+    //void crear_Vanesa(int ancho,int alto);
     //POST::crea un zombi
-    void crear_zombi(int ancho,int alto);
+    //void crear_zombi(int ancho,int alto);
     //POST::crea un vampiro
-    void crear_vampiro(int ancho,int alto);
+    //void crear_vampiro(int ancho,int alto);
     //PRE::no exista un Nosferatu previo
     //POST::crea a Nosferatu
-    void crear_Nosferatu(int ancho,int alto);
+    //void crear_Nosferatu(int ancho,int alto);
     //PRE::no exista una Vampirella previa
     //POST::crea a Vampirella
-    void crear_Vampirella(int ancho,int alto);
+    //void crear_Vampirella(int ancho,int alto);
     //POST::crea agua
-    void crear_agua(int ancho,int alto,int cant);
+    //void crear_agua(int ancho,int alto,int cant);
     //POST::crea balas
-    void crear_bala(int ancho,int alto,int cant);
+    //void crear_bala(int ancho,int alto,int cant);
     //POST::crea una cruz
-    void crear_cruz(int ancho,int alto);
+    //void crear_cruz(int ancho,int alto);
     //POST::crea una estaca
-    void crear_estaca(int ancho,int alto);
+    //void crear_estaca(int ancho,int alto);
     //POST::crea una escopeta
-    void crear_escopeta(int ancho,int alto);
+    //void crear_escopeta(int ancho,int alto);
 };
 #endif //TP2_MAPA_H

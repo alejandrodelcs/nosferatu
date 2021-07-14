@@ -29,6 +29,7 @@ Tablero *Interacciones::cargarMatriz() {
             decidirObjeto(estado.devolverId(), estado.devolverPosx(), estado.devolverPosy(), estado.devolverNombre(),
                           estado.devolverCantidad(), diccionarioPersonajes);
             diccionarioPersonajes->imprimirArbol(); //prueba
+            delete diccionarioPersonajes;
         }
     } else {
         std::cerr << "ERROR!...el Archivo" << PATH << "No se abrio" << std::endl;
@@ -80,6 +81,8 @@ Interacciones::crearElemento(const std::string& id, int fila, int columna, const
     }
 
     diccionarioPersonajes->agregarDato(id, aux);
+
+    delete aux;
 }
 
 void Interacciones::crearMounstruo(const std::string& id, int fila, int columna, const std::string& nombre,
@@ -95,6 +98,7 @@ void Interacciones::crearMounstruo(const std::string& id, int fila, int columna,
         aux = new Zombi(fila,columna,id);
     }
     diccionarioPersonajes->agregarDato(id,aux);
+    delete aux;
 }
 
 void Interacciones::crearSer(const std::string& id, int fila, int columna, const std::string& nombre,
@@ -109,6 +113,8 @@ void Interacciones::crearSer(const std::string& id, int fila, int columna, const
         aux = new Vanesa(fila,columna,id);
     }
     diccionarioPersonajes->agregarDato(id,aux);
+
+    delete aux;
 }
 
 

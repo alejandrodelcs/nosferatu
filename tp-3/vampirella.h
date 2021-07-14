@@ -6,7 +6,7 @@ class Vampirella : public Vampiro {
 public:
     Vampirella(int fila, int columna, std::string id);
 
-    std::string obtenerSimbolo() override;
+    std::string obtenerSimbolo();
 
     void mostrar();
 
