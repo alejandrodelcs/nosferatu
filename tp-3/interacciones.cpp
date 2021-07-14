@@ -4,7 +4,9 @@
 
 #include "interacciones.h"
 
-
+Interacciones::Interacciones() {
+    this->tablero = nullptr;
+}
 Tablero *Interacciones::cargarMatriz() {
     std::ifstream archivo;
     archivo.open(PATH, std::ios::in);
@@ -13,7 +15,6 @@ Tablero *Interacciones::cargarMatriz() {
     std::string nombreItem;
     std::string coordenadaXStr, coordenadaYStr;
     int ancho, largo;
-    Tablero *tablero = nullptr;
     if (archivo.is_open()) {
         std::cout << "el archivo se abrio de manera exitosa" << std::endl;
         getline(archivo, coordenadaXStr, ' ');
@@ -115,6 +116,10 @@ void Interacciones::crearSer(const std::string& id, int fila, int columna, const
     diccionarioPersonajes->agregarDato(id,aux);
 
     delete aux;
+}
+
+Interacciones::~Interacciones() {
+    delete tablero;
 }
 
 

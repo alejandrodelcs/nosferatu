@@ -10,6 +10,8 @@
 
 class Interacciones {
 private:
+    Tablero *tablero;
+private:
     bool validarMonstruo(const std::string& id);
     bool validarElemento(const std::string& id);
     bool validarSer(const std::string& id);
@@ -20,10 +22,11 @@ private:
 
 
 public:
-    Interacciones()=default;
+    Interacciones();
     //PRE: el tablero(matriz) debe existir
     //POST: devuelve el tablero con objetos
     Tablero* cargarMatriz();
+    ~Interacciones();
 
 };
 
