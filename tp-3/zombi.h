@@ -3,13 +3,16 @@
 
 #include "monstruo.h"
 
-class zombi : public Monstruo {
+class Zombi : public Monstruo {
 public:
-    zombi(int fila, int columna, std::string id, int vida, int ataque);
+    Zombi(int fila, int columna, std::string id);
 
     std::string obtenerSimbolo();
 
     void mostrar();
+    void atacar(){};
+    void defender(){};
+
 };
 
 #endif //TP2_ZOMBIE_H

@@ -7,7 +7,11 @@ protected:
 	int vida;
 	int ataque;
 public:
-	//Ser(int fila, int columna, std::string id, int vida, int ataque);
+    Ser(){};
+	int asignarVida();
+	int asignarAtaque();
+	int obtenerVida();
+	int obtenerAtaque();
 	virtual void atacar() = 0;
 	virtual void defender() = 0;
 };

@@ -5,7 +5,7 @@
 
 class Humano : public Ser {
 public:
-    Humano(int fila, int columna, std::string id, int vida, int ataque);
+    Humano(int fila, int columna, std::string id);
 
     std::string obtenerSimbolo();
 

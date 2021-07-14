@@ -1,19 +1,19 @@
 #include "zombi.h"
 
-zombi::zombi(int fila, int columna, std::string id, int vida, int ataque) {
+Zombi::Zombi(int fila, int columna, std::string id) {
     this->fila = fila;
     this->columna = columna;
     this->simbolo = "z";
     this->id = id;
-    this->vida = vida;
-    this->ataque = ataque;
+    this->vida = asignarVida();
+    this->ataque = asignarAtaque();
 }
 
-std::string zombi::obtenerSimbolo() {
+std::string Zombi::obtenerSimbolo() {
     return simbolo;
 }
 
 
-void zombi::mostrar() {
+void Zombi::mostrar() {
     std::cout << "el zombi" << std::endl;
 }

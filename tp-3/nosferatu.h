@@ -5,11 +5,15 @@
 
 class Nosferatu : public Vampiro {
 public:
-    Nosferatu(int fila, int columna, std::string id, int vida, int ataque);
+    Nosferatu(int fila, int columna, const std::string& id);
 
     std::string obtenerSimbolo();
 
-    void mostrar() override;
+    void mostrar();
+
+    void atacar(){};
+    void defender(){};
+
 };
 
 #endif //TP2_NOSFERATU_H

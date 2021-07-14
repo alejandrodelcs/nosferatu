@@ -1,12 +1,12 @@
 #include "nosferatu.h"
 
-Nosferatu::Nosferatu(int fila, int columna, std::string id, int vida, int ataque) : Vampiro(fila, columna, id, vida, ataque){
+Nosferatu::Nosferatu(int fila, int columna, const std::string& id) : Vampiro(fila, columna, id){
     this->fila = fila;
     this->columna = columna;
     this->simbolo = "N";
     this->id = id;
-    this->vida = vida;
-    this->ataque = ataque;
+    this->vida = asignarVida();
+    this->ataque = asignarAtaque();
 }
 
 std::string Nosferatu::obtenerSimbolo() {

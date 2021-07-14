@@ -5,7 +5,7 @@
 
 class Vanesa : public Cazavampiro {
 public:
-    Vanesa(int fila, int columna, std::string id, int vida, int ataque);
+    Vanesa(int fila, int columna, std::string id);
 
     std::string obtenerSimbolo();
 

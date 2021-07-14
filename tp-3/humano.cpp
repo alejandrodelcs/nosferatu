@@ -1,12 +1,12 @@
 #include "humano.h"
 
-Humano::Humano(int fila, int columna, std::string id, int vida, int ataque){
+Humano::Humano(int fila, int columna, std::string id){
     this->fila = fila;
     this->columna = columna;
     this->simbolo = "h";
     this->id = id;
-    this->vida = vida;
-    this->ataque = ataque;
+    this->vida = asignarVida();
+    this->ataque = asignarAtaque();
 }
 
 std::string Humano::obtenerSimbolo() {

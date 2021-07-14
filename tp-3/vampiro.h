@@ -5,11 +5,15 @@
 
 class Vampiro : public Monstruo {
 public:
-    Vampiro(int fila, int columna, std::string id, int vida, int ataque);
+    Vampiro(int fila, int columna, std::string id);
 
     std::string obtenerSimbolo();
 
     void mostrar();
+
+    void atacar(){};
+    void defender(){};
+
 
 };
 

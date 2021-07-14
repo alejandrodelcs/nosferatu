@@ -1,12 +1,12 @@
 #include "vampirella.h"
 
-Vampirella::Vampirella(int fila, int columna, std::string id, int vida, int ataque) : Vampiro(fila, columna, id, vida, ataque){
+Vampirella::Vampirella(int fila, int columna, std::string id) : Vampiro(fila, columna, id){
     this->fila = fila;
     this->columna = columna;
     this->simbolo = "V";
     this->id = id;
-    this->vida = vida;
-    this->ataque = ataque;
+    this->vida = asignarVida();
+    this->ataque = asignarAtaque();
 }
 
 std::string Vampirella::obtenerSimbolo() {
