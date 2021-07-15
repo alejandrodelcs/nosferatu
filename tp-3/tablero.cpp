@@ -24,7 +24,7 @@ void Tablero::imprimirTablero()
 {
     for(int i= 0; i<this->abscisa; i++) {
         for (int j = 0; j < this->ordenada; j++) {
-            if (this->pObjeto[i][j] == nullptr) {
+            if (this->pObjeto[i][j] == nullptr) { //Preguntar si hay elemento,ser, monstruo
                 std::cout << "* ";
             } else {
                 std::cout << pObjeto[i][j]->simbolo <<" ";
