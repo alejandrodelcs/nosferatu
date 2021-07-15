@@ -22,7 +22,7 @@ private:
 
 
 public:
-    Interacciones();
+    Interacciones() = default;
     //PRE: el tablero(matriz) debe existir
     //POST: devuelve el tablero con objetos
     Tablero* cargarMatriz();
