@@ -18,7 +18,7 @@
 #include "zombi.h"
 
 const std::string NUMEROS = "0123456789";
-const std::string PATH = "../estado.txt";
+const std::string PATH = "estado.txt";
 const std::string c_humano = "h";
 const std::string c_zombi = "z";
 const std::string c_vampiro = "v";

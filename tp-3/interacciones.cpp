@@ -5,7 +5,7 @@
 #include "interacciones.h"
 
 
-Tablero *Interacciones::cargarMatriz() {
+ABB<std::string, Objeto* >* Interacciones::cargarMatriz() {
     std::ifstream archivo;
     archivo.open(PATH, std::ios::in);
 
@@ -31,9 +31,13 @@ Tablero *Interacciones::cargarMatriz() {
         }
     } else {
         std::cerr << "ERROR!...el Archivo" << PATH << "No se abrio" << std::endl;
+        exit(1);
     }
-    diccionarioPersonajes->imprimirArbol();
-    return tablero;
+    //diccionarioPersonajes->imprimirArbol();
+    diccionarioPersonajes->imprimirPadre("052");
+    diccionarioPersonajes->imprimirIzquierdo("321");
+    diccionarioPersonajes->imprimirDerecho("052");
+    return diccionarioPersonajes;
 }
 
 
