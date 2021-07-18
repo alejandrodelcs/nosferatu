@@ -152,11 +152,11 @@ int* Tablero::getSureste(){
 Tablero::~Tablero(){
 	for (int i = 0; i < cantidadFilas; i++){
 		for (int j = 0; j < cantidadColumnas; j++){
-			if (! obtenerCasillero(j,i)->hayPersonaje()){
+			if (obtenerCasillero(j,i)->hayPersonaje()){
 				Ser* aux = obtenerCasillero(j,i)->obtenerPersonaje();
 				delete aux;
 			}
-			else if (! obtenerCasillero(j,i)->hayElemento()){
+			else if (obtenerCasillero(j,i)->hayElemento()){
 				Elemento* aux = obtenerCasillero(j,i)->obtenerElemento();
 				delete aux;
 				}

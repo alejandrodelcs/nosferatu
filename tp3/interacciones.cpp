@@ -7,11 +7,13 @@
 #include "ABB.h"
 
 Interacciones::Interacciones(Tablero* tablero, ABB<std::string, Objeto*>* diccionarioPersonajes){
-	cargarMatriz(tablero, diccionarioPersonajes);
+	this->tablero = tablero;
+	this->diccionarioPersonajes = diccionarioPersonajes;
+	cargarMatriz();
 }
 
 
-void Interacciones::cargarMatriz(Tablero* tablero, ABB<std::string, Objeto*>* diccionarioPersonajes) {
+void Interacciones::cargarMatriz() {
     std::ifstream archivo;
     archivo.open(PATH, std::ios::in);
 
@@ -33,7 +35,7 @@ void Interacciones::cargarMatriz(Tablero* tablero, ABB<std::string, Objeto*>* di
             validarSer(estado.devolverId());
 
             decidirObjeto(estado.devolverId(), estado.devolverPosx(), estado.devolverPosy(), estado.devolverNombre(),
-                          estado.devolverCantidad(), diccionarioPersonajes, tablero);
+                          estado.devolverCantidad());
         }
     } else {
         std::cerr << "ERROR!...el Archivo" << PATH << "No se abrio" << std::endl;
@@ -60,23 +62,21 @@ bool Interacciones::validarSer(const std::string& id) {
 }
 
 
-void Interacciones::decidirObjeto(const std::string& id, int fila, int columna, const std::string& nombre, int cantidad,
-                                  ABB<std::string, Objeto *> *diccionarioPersonajes, Tablero* tablero) {
+void Interacciones::decidirObjeto(const std::string& id, int fila, int columna, const std::string& nombre, int cantidad) {
 
     if (validarElemento(id)) {
-        crearElemento(id, fila, columna, nombre, cantidad, diccionarioPersonajes, tablero);
+        crearElemento(id, fila, columna, nombre, cantidad);
     }else if (validarMonstruo(id)){
-        crearMounstruo(id, fila, columna, nombre, diccionarioPersonajes, tablero);
+        crearMounstruo(id, fila, columna, nombre);
     }else{
-        crearSer(id, fila, columna, nombre, diccionarioPersonajes, tablero);
+        crearSer(id, fila, columna, nombre);
     }
 
 }
 
 
 void
-Interacciones::crearElemento(const std::string& id, int fila, int columna, const std::string& nombre, int cantidad,
-                             ABB<std::string, Objeto *> *diccionarioPersonajes, Tablero* tablero) {
+Interacciones::crearElemento(const std::string& id, int fila, int columna, const std::string& nombre, int cantidad) {
     Elemento *aux;
     if (nombre == "agua") {
         aux = new Agua(fila, columna, id, cantidad);
@@ -96,8 +96,7 @@ Interacciones::crearElemento(const std::string& id, int fila, int columna, const
 
 }
 
-void Interacciones::crearMounstruo(const std::string& id, int fila, int columna, const std::string& nombre,
-                                   ABB<std::string, Objeto *> *diccionarioPersonajes, Tablero* tablero) {
+void Interacciones::crearMounstruo(const std::string& id, int fila, int columna, const std::string& nombre) {
     Monstruo* aux;
     if (nombre == "Nosferatu"){
         aux = new Nosferatu(fila,columna,id);
@@ -114,8 +113,7 @@ void Interacciones::crearMounstruo(const std::string& id, int fila, int columna,
 
 }
 
-void Interacciones::crearSer(const std::string& id, int fila, int columna, const std::string& nombre,
-                             ABB<std::string, Objeto *> *diccionarioPersonajes, Tablero* tablero) {
+void Interacciones::crearSer(const std::string& id, int fila, int columna, const std::string& nombre) {
     Ser* aux;
 
     if(nombre == "humano"){
