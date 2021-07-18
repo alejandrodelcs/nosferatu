@@ -37,6 +37,19 @@ private:
 	//POS: Divide al tablero en cuatro cuadrantes (NO,NE,SO,SE)
 	void establecerCuadrantes();
 
+	//PRE: Existe un archivo bien formado con el tamaño del tablero y los terrenos en cada posición.
+	//POS: Carga los terrenos en cada casillero.
+	void cargarTablero();
+
+	//PRE:
+	//POS: Crea un tablero del tamaño pasado por parámetros (el tablero es una matriz
+	//     de punteros a casilleros que apuntan a nullptr).
+	void crearTablero(int cantidadFilas, int cantidadColumnas);
+
+	//PRE:
+	//POS: Hace que todos los punteros a casilleros apunten a un casillero.
+	void inicializarTablero();
+
 
 public:
 
@@ -46,33 +59,35 @@ public:
 	//POS: Crea un tablero con las dimensiones pasadas por parámetro.
 	Tablero(int cantidadFilas, int cantidadColumnas);
 
-	void inicializarTablero();
 
 	//PRE:
-	//POS: Muestra el tablero.
+	//POS: Muestra el tablero con sus terrenos.
 	void mostrarTablero();
 
+	//PRE:
+	//POS: Muestra el tablero con sus objetos.
+	void mostrarTableroObjetos();
+
 	//PRE: La posición se encuentra dentro de los límites del tablero.
-	//POS: Corrige las coordenadas y verifica que la posción elegida está vacía.
+	//POS: Verifica que la posción elegida está vacía.
 	bool esPosicionVacia(int posicionX, int posicionY);
 
 	//PRE:
-	//POS: Corrige las coordenadas y verifica que la posición elegida se encuentra dentro de
+	//POS: Verifica que la posición elegida se encuentra dentro de
 	//     los límites del tablero.
 	bool esPosicionValida(int posicionX, int posicionY);
 
 	//PRE: Las posiciones son válidas y existe un objeto en las mismas.
-	//POS: Corrige las coordenadas y devuelve el objeto pedido por las posiciones.
+	//POS: Devuelve el objeto pedido por las posiciones.
 	Casillero* obtenerCasillero(int posicionX, int posicionY);
 
-	//PRE:
-	//POS: Muestra la información general del tablero.
-	void mostrarInformacion();
+	//PRE: Las posiciones son válidas y no hay otro personaje en el casillero.
+	//POS: Agrega un personaje al casillero.
+	void agregarDato(int posicionX, int posicionY, Ser* nuevoPersonaje);
 
-
-	//PRE: Los límites son un vector de 4 elementos representado por [inferiorX, superiorX, inferiorY, superiorY]
-	//POS: Realiza una busqueda del elemento dependiendo de su clase.
-	bool buscarPorCuadrante(string clase, int limites[4]);
+	//PRE: Las posiciones son válidas y no hay otro elemento en el casillero.
+	//POS: Agrega un elemento al casillero.
+	void agregarDato(int posicionX, int posicionY, Elemento* nuevoElemento);
 
 	//PRE:
 	//POS: Devuelve los límites que definen al cuadrante Noroeste, esto es un vector
@@ -98,9 +113,9 @@ public:
 	//POS: Elimina el tablero y los objetos presentes en el mismo, liberando la memoria utilizada.
 	~Tablero();
 
-	void crearTablero(int cantidadFilas, int cantidadColumnas);
 
-	void cargarTablero();
+
+
 };
 
 

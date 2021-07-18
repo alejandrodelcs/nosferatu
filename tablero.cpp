@@ -44,25 +44,25 @@ void Tablero::inicializarTablero(){
 void Tablero::establecerCuadrantes(){
 	int mitadHorizontal = (this -> cantidadFilas) / 2;
 	int mitadVertical = (this -> cantidadColumnas) / 2;
-	noroeste[0] = 1;
-	noroeste[1] = mitadVertical;
-	noroeste[2] = 1;
-	noroeste[3] = mitadHorizontal;
+	noroeste[0] = 0;
+	noroeste[1] = mitadVertical - 1;
+	noroeste[2] = 0;
+	noroeste[3] = mitadHorizontal - 1;
 
-	noreste[0] = mitadVertical + 1;
-	noreste[1] = cantidadColumnas;
-	noreste[2] = 1;
-	noreste[3] = mitadHorizontal;
+	noreste[0] = mitadVertical;
+	noreste[1] = cantidadColumnas - 1;
+	noreste[2] = 0;
+	noreste[3] = mitadHorizontal - 1;
 
-	suroeste[0] = 1;
-	suroeste[1] = mitadVertical;
-	suroeste[2] = mitadHorizontal + 1;
-	suroeste[3] = cantidadFilas;
+	suroeste[0] = 0;
+	suroeste[1] = mitadVertical - 1;
+	suroeste[2] = mitadHorizontal;
+	suroeste[3] = cantidadFilas - 1;
 
-	sureste[0] = mitadVertical + 1;
-	sureste[1] = cantidadColumnas;
-	sureste[2] = mitadHorizontal + 1;
-	sureste[3] = cantidadFilas;
+	sureste[0] = mitadVertical;
+	sureste[1] = cantidadColumnas - 1;
+	sureste[2] = mitadHorizontal;
+	sureste[3] = cantidadFilas - 1;
 
 }
 
@@ -79,12 +79,24 @@ void Tablero::mostrarTablero(){
 	}
 }
 
+void Tablero::mostrarTableroObjetos(){
+	for (int i = 0; i < cantidadFilas; i++){
+		for (int j = 0; j < cantidadColumnas; j++){
+			if (obtenerCasillero(j,i)->hayPersonaje())
+				cout << " " << obtenerCasillero(j,i)->obtenerPersonaje()->obtenerSimbolo() << " ";
 
+			else if (obtenerCasillero(j,i)->hayElemento())
+				cout << " " << obtenerCasillero(j,i)->obtenerElemento()->obtenerSimbolo() << " ";
+
+			else
+				cout << " * ";
+		}
+		cout << endl;
+	}
+}
 
 
 bool Tablero::esPosicionVacia(int posicionX, int posicionY){
-	posicionX --;
-	posicionY --;
 	bool posicionVacia = false;
 
 	if (tablero[posicionY][posicionX] == nullptr){
@@ -96,8 +108,6 @@ bool Tablero::esPosicionVacia(int posicionX, int posicionY){
 
 
 bool Tablero::esPosicionValida(int posicionX, int posicionY){
-	posicionX --;
-	posicionY --;
 	bool posicionValida = false;
 
 	if (posicionX >= 0 && posicionX < cantidadColumnas && posicionY >= 0 && posicionY < cantidadFilas)
@@ -113,6 +123,14 @@ Casillero* Tablero::obtenerCasillero(int posicionX, int posicionY){
 	return auxiliar;
 }
 
+
+void Tablero::agregarDato(int posicionX, int posicionY, Ser* nuevoPersonaje){
+	tablero[posicionY][posicionX]->asignarPersonaje(nuevoPersonaje);
+}
+
+void Tablero::agregarDato(int posicionX, int posicionY, Elemento* nuevoElemento){
+	tablero[posicionY][posicionX]->asignarElemento(nuevoElemento);
+}
 
 int* Tablero::getNoroeste(){
 	return this -> noroeste;
@@ -132,10 +150,10 @@ int* Tablero::getSureste(){
 }
 
 Tablero::~Tablero(){
-	for (int i = 1; i <= cantidadFilas; i++){
-		for (int j = 1; j <= cantidadColumnas; j++)
+	for (int i = 0; i < cantidadFilas; i++){
+		for (int j = 0; j < cantidadColumnas; j++)
 			if (! esPosicionVacia(j,i))
-				delete tablero[i-1][j-1];
+				delete tablero[i][j];
 	}
 
 	for (int i = 0; i < cantidadFilas; i++){
