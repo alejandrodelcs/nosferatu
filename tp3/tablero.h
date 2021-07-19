@@ -63,10 +63,6 @@ public:
 	//POS: Muestra el tablero con sus objetos.
 	void mostrarTableroObjetos();
 
-	//PRE: La posición se encuentra dentro de los límites del tablero.
-	//POS: Verifica que la posción elegida está vacía.
-	bool esPosicionVacia(int posicionX, int posicionY);
-
 	//PRE:
 	//POS: Verifica que la posición elegida se encuentra dentro de
 	//     los límites del tablero.
@@ -83,6 +79,10 @@ public:
 	//PRE: Las posiciones son válidas y no hay otro elemento en el casillero.
 	//POS: Agrega un elemento al casillero.
 	void agregarDato(int posicionX, int posicionY, Elemento* nuevoElemento);
+
+	//PRE: Existe un personaje u objeto en la posición indicada.
+	//POS: Elimina el personaje u objeto que se encuentra en esa posición.
+	void eliminarDato(int posicionX, int posicionY);
 
 	//PRE:
 	//POS: Devuelve los límites que definen al cuadrante Noroeste, esto es un vector

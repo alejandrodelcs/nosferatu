@@ -22,11 +22,11 @@ int Estado::devolverPosx() {
                 && (int(NUMEROS.find(this->nombreObjeto[0])) == -1)
                 ? this->coordenada.substr(int(coordenada.find('(')) + 1,
                                           int(coordenada.find(',')) - int(coordenada.find('(')) - 1)
-                : coordenada.substr(1, int(coordenada.find(',')) - 1));
+                : coordenada.substr(1, int(coordenada.find(',')) - 1)) - 1;
 }
 
 int Estado::devolverPosy() {
-    return stoi(coordenada.substr(int(coordenada.find(',')) + 2, int(coordenada.find(')')) - 2));
+    return stoi(coordenada.substr(int(coordenada.find(',')) + 2, int(coordenada.find(')')) - 2)) - 1;
 }
 
 std::string Estado::devolverId() {

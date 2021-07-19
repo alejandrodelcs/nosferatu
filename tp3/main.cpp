@@ -6,8 +6,11 @@
 #include "ABB.h"
 #include "objeto.h"
 
+#include "Menu.h"
+
 
 int main() {
+
 
     srand(time(nullptr));
 
@@ -17,13 +20,30 @@ int main() {
 
 	Interacciones* interacciones = new Interacciones(nuevoTablero, diccionarioPersonajes);
 
-	nuevoTablero->mostrarTablero();
-	std::cout << endl;
-	nuevoTablero->mostrarTableroObjetos();
+	//nuevoTablero->mostrarTablero();
+//	std::cout << endl;
+//	nuevoTablero->mostrarTableroObjetos();
+//	nuevoTablero->eliminarDato(3,4);
+//	std::cout << endl;
+//	nuevoTablero->mostrarTableroObjetos();
 
-	diccionarioPersonajes->buscar("321")->mostrar();
+
+	Menu* menu = new Menu(diccionarioPersonajes, nuevoTablero);
+	int opcionPrincipal = menu->obtenerOpcionMenuPrincipal();
+
+	while(opcionPrincipal != SALIR_MENU_PRINCIPAL){
+		menu->procesarOpcionPrincipal();
+		cout << endl;
+		menu->ingresarOpcionPrincipal();
+		opcionPrincipal = menu->obtenerOpcionMenuPrincipal();
+	}
+	cout << "Vamo Messi!" << endl;
 
 	delete nuevoTablero;
 	delete diccionarioPersonajes;
 	delete interacciones;
+	delete menu;
+
+
+return 0;
 }

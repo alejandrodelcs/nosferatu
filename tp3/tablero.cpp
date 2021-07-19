@@ -1,5 +1,7 @@
 #include "tablero.h"
 #include "objeto.h"
+#include "ser.h"
+#include "elemento.h"
 
 Tablero::Tablero(){
 	cantidadFilas = 0;
@@ -96,17 +98,6 @@ void Tablero::mostrarTableroObjetos(){
 }
 
 
-bool Tablero::esPosicionVacia(int posicionX, int posicionY){
-	bool posicionVacia = false;
-
-	if (tablero[posicionY][posicionX] == nullptr){
-		posicionVacia = true;
-	}
-
-	return posicionVacia;
-}
-
-
 bool Tablero::esPosicionValida(int posicionX, int posicionY){
 	bool posicionValida = false;
 
@@ -185,27 +176,57 @@ void Tablero::cargarTablero(){
 	    	col = stoi(dimensionYStr);
 	    	crearTablero(fila, col);
 
-	    	int i = 0;
-	    	int k = 0;
+	    	int columnaActual = 0;
+	    	int filaActual = 0;
 	    	int longitud;
 	    	std::string terrenoActual;
 	    	while (!archivo.eof()){
 	    		getline(archivo, cadenaTerreno);
 	    		longitud = cadenaTerreno.size();
 
-	    		for (int j = 0; j < longitud; j++){
+	    		for (int indiceTerrenoActual = 0; indiceTerrenoActual < longitud; indiceTerrenoActual++){
 
-	    			if (cadenaTerreno[j] != ','){
-	    				k = j/2;
-	    				terrenoActual = cadenaTerreno[j];
-	    				obtenerCasillero(k,i)->asignarTerreno(terrenoActual);
+	    			if (cadenaTerreno[indiceTerrenoActual] != ','){
+	    				filaActual = indiceTerrenoActual/2;
+	    				terrenoActual = cadenaTerreno[indiceTerrenoActual];
+	    				obtenerCasillero(filaActual,columnaActual)->asignarTerreno(terrenoActual);
 	    			}
 	    		}
-	    		i++;
+	    		columnaActual++;
 	    	}
 	   }
 	   archivo.close();
 }
+
+
+void Tablero::eliminarDato(int posicionX, int posicionY){
+	Casillero* aux = obtenerCasillero(posicionX, posicionY);
+
+	if (aux->hayPersonaje()){
+		Ser* personajeAEliminar = aux->obtenerPersonaje();
+		aux->quitarPersonaje();
+		delete personajeAEliminar;
+	}
+	else if (aux->hayElemento()){
+		Elemento* elementoAEliminar = aux->obtenerElemento();
+		aux->quitarElemento();
+		delete elementoAEliminar;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
