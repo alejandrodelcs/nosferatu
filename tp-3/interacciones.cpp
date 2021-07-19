@@ -37,6 +37,7 @@ ABB<std::string, Objeto* >* Interacciones::cargarMatriz() {
     diccionarioPersonajes->imprimirPadre("052");
     diccionarioPersonajes->imprimirIzquierdo("321");
     diccionarioPersonajes->imprimirDerecho("052");
+    std::cout<<diccionarioPersonajes->imprimirArbol()<<std::endl;
     return diccionarioPersonajes;
 }
 
