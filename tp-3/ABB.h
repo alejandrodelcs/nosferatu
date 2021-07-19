@@ -11,7 +11,7 @@ private:
 
     void agregarNodo(NodoAB<Clave, Valor>* nuevo_nodo);
 
-    Valor imprimirArbol(NodoAB<Clave, Valor>* raiz);
+    void imprimirArbol(NodoAB<Clave, Valor>* raiz);
 
     NodoAB<Clave, Valor>* buscar(Clave clave, NodoAB<Clave, Valor>* raiz);
     bool esta(Clave clave, NodoAB<Clave, Valor>* nodo);
@@ -30,7 +30,7 @@ public:
     ABB();
     bool estaVacio();
     void agregarDato(Clave clave, Valor valor);
-    Valor imprimirArbol();
+    void imprimirArbol();
 
     //PRE: La clave se encuentra en el arbol
     Valor buscar(Clave clave);
@@ -109,23 +109,20 @@ ABB<Clave,Valor>::~ABB(){
 
 
 template <typename Clave, typename Valor>
-Valor ABB<Clave,Valor>::imprimirArbol(NodoAB<Clave, Valor>* raiz){
-    Valor aux;
+void ABB<Clave,Valor>::imprimirArbol(NodoAB<Clave, Valor>* raiz){
     if (raiz != nullptr){
         imprimirArbol(raiz->obtenerIzquierdo());
-        //cout << raiz->obtenerClave();
-        //cout << ":";
-        //cout << raiz->obtenerValor() << endl;
-        aux=raiz->obtenerValor();
+        cout << raiz->obtenerClave();
+        cout << ":";
+        cout << raiz->obtenerValor() << endl;
         imprimirArbol(raiz->obtenerDerecho());
     }
-    return aux;
 }
 
 
 template <typename Clave, typename Valor>
-Valor ABB<Clave,Valor>::imprimirArbol(){
-    return imprimirArbol(raiz);
+void ABB<Clave,Valor>::imprimirArbol(){
+    imprimirArbol(raiz);
 }
 
 
