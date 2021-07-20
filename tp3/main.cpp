@@ -16,9 +16,13 @@ int main() {
 
 	Tablero* nuevoTablero = new Tablero();
 
-	ABB<string, Objeto*>* diccionarioPersonajes = new ABB<string, Objeto*>();
+	ABB<string, Objeto*>* diccionarioPersonajes= new ABB<string, Objeto*>();   //Sacar puntero y pasar como parametro con ampersen (hacer estatico)
 
 	Interacciones* interacciones = new Interacciones(nuevoTablero, diccionarioPersonajes);
+
+//	std::cout << "busca" << std::endl;
+//	diccionarioPersonajes->buscar("456");
+//	std::cout << "termina busqueda" << std::endl;
 
 	//nuevoTablero->mostrarTablero();
 //	std::cout << endl;
@@ -28,10 +32,10 @@ int main() {
 //	nuevoTablero->mostrarTableroObjetos();
 
 
-	Menu* menu = new Menu(diccionarioPersonajes, nuevoTablero);
+	Menu* menu = new Menu(diccionarioPersonajes, nuevoTablero);  //Sacar puntero y hacer estatico
 	int opcionPrincipal = menu->obtenerOpcionMenuPrincipal();
 
-	while(opcionPrincipal != SALIR_MENU_PRINCIPAL){
+	while(opcionPrincipal != SALIR_MENU_PRINCIPAL){          //Pasar opcion principal como parametro.
 		menu->procesarOpcionPrincipal();
 		cout << endl;
 		menu->ingresarOpcionPrincipal();

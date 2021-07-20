@@ -99,19 +99,12 @@ void Tablero::mostrarTableroObjetos(){
 
 
 bool Tablero::esPosicionValida(int posicionX, int posicionY){
-	bool posicionValida = false;
-
-	if (posicionX >= 0 && posicionX < cantidadColumnas && posicionY >= 0 && posicionY < cantidadFilas)
-		posicionValida = true;
-
-	return posicionValida;
+	return (posicionX >= 0 && posicionX < cantidadColumnas && posicionY >= 0 && posicionY < cantidadFilas);
 }
 
 
 Casillero* Tablero::obtenerCasillero(int posicionX, int posicionY){
-	Casillero* auxiliar;
-	auxiliar = tablero[posicionY][posicionX];
-	return auxiliar;
+	return tablero[posicionY][posicionX];
 }
 
 
@@ -199,7 +192,7 @@ void Tablero::cargarTablero(){
 }
 
 
-void Tablero::eliminarDato(int posicionX, int posicionY){
+void Tablero::eliminarDato(int posicionX, int posicionY){    //Corregir, eliminar desde el casillero
 	Casillero* aux = obtenerCasillero(posicionX, posicionY);
 
 	if (aux->hayPersonaje()){
