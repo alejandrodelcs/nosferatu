@@ -147,21 +147,19 @@ bool ABB<Clave,Valor>::esta(Clave clave, NodoAB<Clave,Valor>* nodo){
 
 
 template <typename Clave, typename Valor>
-bool ABB<Clave,Valor>::esta(Clave clave){
+bool ABB<Clave,Valor>::esta(Clave clave){  //cambiar nombre ExisteLaClave
     return esta(clave, raiz);
 }
 
 
 template <typename Clave, typename Valor>
 NodoAB<Clave, Valor>* ABB<Clave,Valor>::buscar(Clave clave, NodoAB<Clave, Valor>* raiz){
-    if (clave == raiz->obtenerClave())
+    if (raiz == nullptr || clave == raiz->obtenerClave()) //Cambiar la máscara
         return raiz;
-    else if(clave > raiz->obtenerClave()){
+    if(clave > raiz->obtenerClave()){
         return buscar(clave, raiz->obtenerDerecho());
     }
-    else{
-        return buscar(clave, raiz->obtenerIzquierdo());
-    }
+    return buscar(clave, raiz->obtenerIzquierdo());
 }
 
 
