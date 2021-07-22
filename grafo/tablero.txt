@@ -1,0 +1,6 @@
+5 6
+M,M,V,M,P,V
+O,O,O,O,O,L
+O,O,O,O,O,O
+O,O,O,O,O,M
+C,L,O,V,M,C
