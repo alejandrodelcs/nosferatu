@@ -34,7 +34,8 @@ void Interacciones::cargarMatriz() {
             Estado estado(lineaArchivo);
             validarSer(estado.devolverId());
 
-            decidirObjeto(estado.devolverId(), estado.devolverPosx(), estado.devolverPosy(), estado.devolverNombre(),
+            decidirObjeto(estado.devolverId(), estado.devolverPosx(), estado.devolverPosy(),
+                          estado.devolverNombreObjeto(),
                           estado.devolverCantidad());
         }
     } else {
