@@ -1,0 +1,16 @@
+cruz (1, 1) 321
+estaca (5, 1) 383
+humano CV (2, 2) 052
+humano (4, 2) 048
+zombi (4, 3) 150
+humano (3, 4) 002
+vampiro (5, 3) 205
+zombi (1, 4) 115
+Nosferatu (2, 7) 200
+escopeta (5, 7) 342
+agua 5 (3, 8) 302
+Vanesa (5, 2) 000
+bala 2 (4, 1) 365
+cruz (6, 4) 385
+escopeta (6, 5) 345
+Vampirella (2, 3) 201

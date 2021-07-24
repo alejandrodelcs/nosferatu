@@ -1,0 +1,9 @@
+8 6
+M,M,V,M,P,V
+C,C,V,M,L,L
+L,C,C,V,O,O
+M,M,C,C,V,M
+L,O,M,C,V,L
+P,L,M,V,O,C
+C,O,L,M,V,M
+P,L,P,O,C,C
