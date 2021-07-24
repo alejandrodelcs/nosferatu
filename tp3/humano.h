@@ -4,6 +4,9 @@
 #include "ser.h"
 
 class Humano : public Ser {
+private:
+    bool escopeta;
+    int municion;
 public:
     Humano(int fila, int columna, std::string id);
 
@@ -14,6 +17,12 @@ public:
     void atacar();
 
     void defender();
+
+    bool esta_en_rango(int fila,int col);
+
+    bool tomar_objeto(std::string objeto, int cant);
+private:
+    bool rango_escopeta(int fila,int col);
 };
 
 #endif //TP2_HUMANO_H

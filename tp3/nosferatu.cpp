@@ -17,3 +17,14 @@ std::string Nosferatu::obtenerSimbolo() {
 void Nosferatu::mostrar() {
     std::cout << "Nosferatu" << std::endl;
 }
+
+bool Nosferatu::tomar_objeto(std::string objeto, int cant) {
+    bool tomo_objeto=false;
+    if(objeto=="e"){
+        tomo_objeto=true;
+    }
+    return tomo_objeto;
+}
+bool Nosferatu::esta_en_rango(int fila, int col) {
+    return(fila<=this->fila+2 && col<=this->columna+2);
+}

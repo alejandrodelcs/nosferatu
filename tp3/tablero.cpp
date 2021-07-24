@@ -38,7 +38,7 @@ Tablero::Tablero(int cantidadFilas, int cantidadColumnas){
 void Tablero::inicializarTablero(){
 	for (int i = 0; i < cantidadFilas; i++){
 		for (int j = 0; j < cantidadColumnas; j++){
-			tablero[i][j] = new Casillero();
+			tablero[i][j] = new Casillero(i,j);
 		}
 	}
 }

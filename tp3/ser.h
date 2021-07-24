@@ -14,6 +14,8 @@ public:
 	int obtenerAtaque();
 	virtual void atacar() = 0;
 	virtual void defender() = 0;
+	virtual bool esta_en_rango(int fila,int col) = 0;
+	virtual bool tomar_objeto(std::string elemento,int cant)=0;
 };
 
 #endif //TP2_SER_H

@@ -8,6 +8,8 @@
 class Casillero{
 private:
 	std::string terreno;
+	int fila;
+	int col;
 	bool hayPersonajeEnCasillero;
 	bool hayElementoEnCasillero;
 	Ser* personaje;
@@ -15,7 +17,7 @@ private:
 public:
 
 	//Crea un casillero vacío
-	Casillero();
+	Casillero(int fila, int col);
 
 	//PRE:
 	//POS: Asigna el tipo de terreno que tiene el casillero
@@ -57,7 +59,10 @@ public:
 	//PRE: En el casillero hay un elemento
 	//POS: Deja el casillero sin elemento haciendo que el puntero apunte a nullptr y que hayElementoEnCasillero sea falso.
 	void quitarElemento();
-
+    //POS:Devuelve la columna
+    int dar_col();
+    //POS: Devuelve la fila
+    int dar_fila();
 };
 
 

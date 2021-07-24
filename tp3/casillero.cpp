@@ -1,11 +1,13 @@
 #include "casillero.h"
 
-Casillero::Casillero(){
+Casillero::Casillero(int fila,int col){
 	this->terreno = "";
 	this->hayPersonajeEnCasillero = false;
 	this->hayElementoEnCasillero = false;
 	this->personaje = nullptr;
 	this->elemento = nullptr;
+	this->fila=fila;
+	this->col=col;
 }
 
 
@@ -61,5 +63,9 @@ void Casillero::quitarElemento(){
 	elemento = nullptr;
 	hayElementoEnCasillero = false;
 }
-
-
+int Casillero::dar_fila() {
+    return fila;
+}
+int Casillero::dar_col() {
+    return  col;
+}

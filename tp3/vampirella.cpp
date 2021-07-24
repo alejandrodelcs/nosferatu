@@ -17,3 +17,17 @@ std::string Vampirella::obtenerSimbolo() {
 void Vampirella::mostrar() {
     std::cout << "Vampirella" << std::endl;
 }
+
+bool Vampirella::tomar_objeto(std::string objeto, int cant) {
+    bool tomo_objeto=false;
+    if(objeto=="e"){
+        tomo_objeto=true;
+    }
+    return tomo_objeto;
+}
+bool Vampirella::esta_en_rango(int fila, int col) {
+    return((fila == this->fila-1 && col == this->columna) ||
+           (fila == this->fila && col == this->columna-1) ||
+           (fila == this->fila+1 && col == this->columna) ||
+           (fila == this->fila && col == this->columna+1));
+}
