@@ -71,7 +71,7 @@ int main() {
 	cout << "Vamo Messi!" << endl;
 
 
-    //FUNCION PARA BOORAR LOS OBJETOS DE TIPO COORDENADAS QUE ESTAN DENTRO DE LOS NODOS DE LA LISTA
+    //FUNCION PARA BORRAR LOS OBJETOS DE TIPO COORDENADAS QUE ESTAN DENTRO DE LOS NODOS DE LA LISTA
     for (int i = 1; i <= movimientos->obtenerLargo(); i++){
     	Coordenadas* coord = movimientos->consulta(i);
     	//cout << "CoordX: " << coord->obtenerCoordenadaX() << "CoordY: " << coord->obtenerCoordenadaY() << endl;

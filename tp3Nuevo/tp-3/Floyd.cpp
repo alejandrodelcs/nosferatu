@@ -149,7 +149,7 @@ Floyd::Floyd(int cantidadVertices) {
 void Floyd::obtenerPosicionInversa(Tablero* tablero, int posicion, int posicionFinal[]){
 	int posicionX;
 	int posicionY;
-	posicionX = posicion % tablero->obtenerCantidadColumnas();
+	posicionX = posicion % tablero->obtenerCantidadColumnas();  //Calcula la posicionX en el tablero a partir de la posicion en la matriz de adyacencia
 	posicionY = posicion / tablero->obtenerCantidadColumnas();
 	posicionFinal[0] = posicionX;
 	posicionFinal[1] = posicionY;

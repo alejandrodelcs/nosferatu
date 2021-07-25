@@ -107,4 +107,9 @@ int Casillero::obtenerCostoTerreno(std::string clase){
 }
 
 
-
+Casillero::~Casillero(){
+	if (hayPersonajeEnCasillero)
+		delete personaje;
+	if (hayElementoEnCasillero)
+		delete elemento;
+}

@@ -36,6 +36,8 @@ public:
     //post: muestra el camino minimo entre el origen y el destino imprimiendo los vertices a visitar y su costo final
     void caminoMinimo(int origen, int destino, Tablero* tablero, Lista<Coordenadas*>* movimientos, int &energiaNecesaria);
 
+    //PRE:
+    //POS: Obtiene la posición de un casillero en el tablero a partir de su posición en la matriz de adyacencia.
     void obtenerPosicionInversa(Tablero* tablero, int posicion, int posicionFinal[]);
 
     //post: libera la memoria pedida

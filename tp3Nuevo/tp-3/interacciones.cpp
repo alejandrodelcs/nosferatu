@@ -20,28 +20,21 @@ void Interacciones::cargarMatriz() {
     std::string lineaArchivo;
     std::string nombreItem;
     std::string coordenadaXStr, coordenadaYStr;
-    //int ancho, largo;
-    //ABB<std::string, Objeto *> *diccionarioPersonajes = new ABB<std::string, Objeto *>;
     if (archivo.is_open()) {
         std::cout << "el archivo se abrio de manera exitosa" << std::endl;
 
-        //Estado estado; //parseador
+        Estado estado; //parseador
         while (getline(archivo, lineaArchivo)) {
-        	Estado estado(lineaArchivo);  //CAMBIAR
-        	//estado.inicializarEstado(lineaArchivo);
+        	estado.leerLineaArchivo(lineaArchivo);
             validarSer(estado.devolverId());
 
-            decidirObjeto(estado.devolverId(), estado.devolverPosx(), estado.devolverPosy(), estado.devolverNombre(),
+            decidirObjeto(estado.devolverId(), estado.devolverPosx(), estado.devolverPosy(), estado.devolverNombreObjeto(),
                           estado.devolverCantidad());
         }
     } else {
         std::cerr << "ERROR!...el Archivo" << PATH << "No se abrio" << std::endl;
         exit(1);
     }
-    //diccionarioPersonajes->imprimirArbol();
-    diccionarioPersonajes->imprimirPadre("052");
-    diccionarioPersonajes->imprimirIzquierdo("321");
-    diccionarioPersonajes->imprimirDerecho("052");
 }
 
 
@@ -125,10 +118,6 @@ void Interacciones::crearSer(const std::string& id, int fila, int columna, const
 
 
 }
-
-//Interacciones::~Interacciones() {
-//    delete tablero;
-//}
 
 
 

@@ -60,6 +60,8 @@ public:
 
 	int obtenerCostoTerreno(std::string clase);
 
+	~Casillero();
+
 };
 
 
