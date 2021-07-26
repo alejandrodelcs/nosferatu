@@ -27,6 +27,8 @@ public:
 
     void recibir_ataque(int ataque);
 
+    int obtener_energia();
+
 private:
     bool rango_escopeta(int fila,int col);
 };

@@ -7,6 +7,8 @@ Vampirella::Vampirella(int fila, int columna, std::string id) : Vampiro(fila, co
     this->id = id;
     this->vida = asignarVida();
     this->ataque = asignarAtaque();
+    this->energia = asignarEnergia();
+    this->armadura = asignarArmdura();
 }
 
 std::string Vampirella::obtenerSimbolo() {
@@ -15,7 +17,9 @@ std::string Vampirella::obtenerSimbolo() {
 
 
 void Vampirella::mostrar() {
-    std::cout << "Vampirella" << std::endl;
+    std::cout << "Vampirella " << fila<<" "<< columna<<std::endl;
+    std::cout<< "armadura "<<armadura<<std::endl;
+    std::cout<< "energia "<<energia<<std::endl;
 }
 
 bool Vampirella::tomar_objeto(std::string objeto, int cant) {
@@ -51,4 +55,7 @@ void Vampirella::recibir_ataque(int ataque){
     else if(armadura==2)ataque=ataque*0.8;
     else if(armadura>2)ataque=ataque*0.2;
     vida -=ataque;
+}
+int Vampirella::obtener_energia() {
+    return energia;
 }

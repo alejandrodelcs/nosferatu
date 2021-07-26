@@ -7,6 +7,8 @@ Nosferatu::Nosferatu(int fila, int columna, const std::string& id) : Vampiro(fil
     this->id = id;
     this->vida = asignarVida();
     this->ataque = asignarAtaque();
+    this->energia = asignarEnergia();
+    this->armadura = asignarArmdura();
 }
 
 std::string Nosferatu::obtenerSimbolo() {
@@ -15,7 +17,9 @@ std::string Nosferatu::obtenerSimbolo() {
 
 
 void Nosferatu::mostrar() {
-    std::cout << "Nosferatu" << std::endl;
+    std::cout << "Nozferatu " << fila<<" "<< columna<<std::endl;
+    std::cout<< "armadura "<<armadura<<std::endl;
+    std::cout<< "energia "<<energia<<std::endl;
 }
 
 bool Nosferatu::tomar_objeto(std::string objeto, int cant) {
@@ -47,4 +51,7 @@ void Nosferatu::recuperarEnergia() {
 }
 void Nosferatu::defender() {
 
+}
+int Nosferatu::obtener_energia() {
+    return energia;
 }

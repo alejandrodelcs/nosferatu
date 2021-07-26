@@ -7,10 +7,13 @@ Vanesa::Vanesa(int fila, int columna, std::string id) : Cazavampiro(fila, column
     this->id = id;
     this->vida = asignarVida();
     this->ataque = asignarAtaque();
+    this->energia = asignarEnergia();
+    this->armadura = asignarArmdura();
     this-> escopeta = false;
     this-> municion = 0;
     this-> estacas = 0;
     this-> agua = 0;
+    this-> cruces =0;
 }
 
 std::string Vanesa::obtenerSimbolo() {
@@ -19,7 +22,15 @@ std::string Vanesa::obtenerSimbolo() {
 
 
 void Vanesa::mostrar() {
-    std::cout << "Vanesa Helsing" << std::endl;
+    std::cout <<"Wanesa "<<fila <<" "<<columna<<std::endl;
+    std::cout <<" vida "<<vida<<std::endl;
+    std::cout <<" energia = "<<agua<<std::endl;
+    std::cout <<" armadura "<<vida<<std::endl;
+    std::cout <<" agua = "<<agua<<std::endl;
+    std::cout <<" escopeta= "<<escopeta<<std::endl;
+    std::cout <<" balas "<<municion <<std::endl;
+    std::cout <<" cruces"<<cruces <<std::endl;
+    std::cout <<" estacas"<<estacas <<std::endl;
 }
 bool Vanesa::tomar_objeto(std::string objeto,int cant) {
     bool se_obtuvo_el_objeto=false;
@@ -38,6 +49,10 @@ bool Vanesa::tomar_objeto(std::string objeto,int cant) {
     else if(objeto == "b"){
         se_obtuvo_el_objeto=true;
         municion+=cant;
+    }
+    else if(objeto=="c"){
+        se_obtuvo_el_objeto=true;
+        cruces+=1;
     }
     return se_obtuvo_el_objeto;
 }
@@ -144,3 +159,6 @@ void Vanesa::recibir_ataque(int ataque) {
     vida -=ataque;
 }
 
+int Vanesa::obtener_energia() {
+    return  energia;
+}

@@ -17,6 +17,7 @@ public:
     bool esta_en_rango(int fila, int col);
     void recuperarEnergia();
     void recibir_ataque(int ataque);
+    int obtener_energia();
 };
 
 #endif //TP2_VAMPIRO_H

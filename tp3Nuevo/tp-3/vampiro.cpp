@@ -7,6 +7,8 @@ Vampiro::Vampiro(int fila, int columna, std::string id) {
     this->id = id;
     this->vida = asignarVida();
     this->ataque = asignarAtaque();
+    this->energia = asignarEnergia();
+    this->armadura = asignarArmdura();
 }
 
 std::string Vampiro::obtenerSimbolo() {
@@ -15,7 +17,9 @@ std::string Vampiro::obtenerSimbolo() {
 
 
 void Vampiro::mostrar() {
-    std::cout << "Vampiro" << std::endl;
+    std::cout << "vampiro " << fila<<" "<< columna<<std::endl;
+    std::cout<< "armadura "<<armadura<<std::endl;
+    std::cout<< "energia "<<energia<<std::endl;
 }
 
 bool Vampiro::tomar_objeto(std::string objeto, int cant) {
@@ -53,4 +57,7 @@ void Vampiro::recibir_ataque(int ataque){
     else if(armadura==2)ataque=ataque*0.8;
     else if(armadura>2)ataque=ataque*0.2;
     vida -=ataque;
+}
+int Vampiro::obtener_energia() {
+    return energia;
 }

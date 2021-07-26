@@ -7,6 +7,8 @@ Zombi::Zombi(int fila, int columna, std::string id) {
     this->id = id;
     this->vida = asignarVida();
     this->ataque = asignarAtaque();
+    this->energia = asignarEnergia();
+    this->armadura = asignarArmdura();
 }
 
 std::string Zombi::obtenerSimbolo() {
@@ -15,7 +17,9 @@ std::string Zombi::obtenerSimbolo() {
 
 
 void Zombi::mostrar() {
-    std::cout << "el zombi" << std::endl;
+    std::cout << "el zombi " << fila<<" "<< columna<<std::endl;
+    std::cout<< "armadura "<<armadura<<std::endl;
+    std::cout<< "energia "<<energia<<std::endl;
 }
 bool Zombi::tomar_objeto(std::string objeto, int cant) {
     bool tomo_objeto=false;
@@ -51,4 +55,7 @@ void Zombi::recibir_ataque(int ataque) {
     else if(armadura==2)ataque=ataque*0.8;
     else if(armadura>2)ataque=ataque*0.2;
     vida -=ataque;
+}
+int Zombi::obtener_energia() {
+    return energia;
 }

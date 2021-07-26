@@ -7,10 +7,13 @@ Cazavampiro::Cazavampiro(int fila, int columna, std::string id) : Humano(fila, c
     this->id = id;
     this->vida = asignarVida();
     this->ataque = asignarAtaque();
+    this->energia = asignarEnergia();
+    this->armadura = asignarArmdura();
     this-> escopeta = false;
     this-> municion = 0;
     this-> estacas = 0;
     this-> agua = 0;
+    this-> cruces = 0;
 }
 
 std::string Cazavampiro::obtenerSimbolo() {
@@ -18,7 +21,15 @@ std::string Cazavampiro::obtenerSimbolo() {
 }
 
 void Cazavampiro::mostrar() {
-    std::cout << "Cazavampiros" << std::endl;
+    std::cout <<"Cazador "<<fila <<" "<<columna<<std::endl;
+    std::cout <<" vida "<<vida<<std::endl;
+    std::cout <<" energia = "<<agua<<std::endl;
+    std::cout <<" armadura "<<vida<<std::endl;
+    std::cout <<" agua = "<<agua<<std::endl;
+    std::cout <<" escopeta= "<<escopeta<<std::endl;
+    std::cout <<" balas "<<municion <<std::endl;
+    std::cout <<" cruces"<<cruces <<std::endl;
+    std::cout <<" estacas"<<estacas <<std::endl;
 }
 bool Cazavampiro::tomar_objeto(std::string objeto,int cant) {
     bool se_obtuvo_el_objeto=false;
@@ -26,7 +37,7 @@ bool Cazavampiro::tomar_objeto(std::string objeto,int cant) {
         escopeta=true;
         se_obtuvo_el_objeto=true;
     }
-    else if (objeto=="A"){
+    else if (objeto=="a"){
         se_obtuvo_el_objeto=true;
         agua += cant;
     }
@@ -37,6 +48,10 @@ bool Cazavampiro::tomar_objeto(std::string objeto,int cant) {
     else if(objeto == "b"){
         se_obtuvo_el_objeto=true;
         municion+=cant;
+    }
+    else if(objeto == "c"){
+        se_obtuvo_el_objeto=true;
+        cruces+=1;
     }
     return se_obtuvo_el_objeto;
 }
@@ -142,4 +157,6 @@ void Cazavampiro::defender(){
         vida +=50;
     }
 }
-
+int Cazavampiro::obtener_energia() {
+    return energia;
+}

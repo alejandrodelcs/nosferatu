@@ -7,6 +7,8 @@ Humano::Humano(int fila, int columna, std::string id){
     this->id = id;
     this->vida = asignarVida();
     this->ataque = asignarAtaque();
+    this->energia=asignarEnergia();
+    this->armadura=asignarArmdura();
     this-> escopeta=false;
     this-> municion=0;
     this-> agua=0;
@@ -17,7 +19,13 @@ std::string Humano::obtenerSimbolo() {
 }
 
 void Humano::mostrar() {
-    std::cout << "Humano" << std::endl;
+    std::cout << "Humano "<<fila <<" "<<columna<<std::endl;
+    std::cout << " vida "<<vida<<std::endl;
+    std::cout<<" energia = "<<agua<<std::endl;
+    std::cout << " armadura "<<vida<<std::endl;
+    std::cout<<" agua = "<<agua<<std::endl;
+    std::cout<<" escopeta= "<<escopeta<<std::endl;
+    std::cout<<" balas "<<municion <<std::endl;
 }
 bool Humano::tomar_objeto(std::string objeto,int cant) {
     bool se_obtuvo_el_objeto=false;
@@ -103,4 +111,7 @@ void Humano::recibir_ataque(int ataque){
     else if(armadura==2)ataque=ataque*0.8;
     else if(armadura>2)ataque=ataque*0.2;
     vida -=ataque;
+}
+int Humano::obtener_energia() {
+    return energia;
 }
