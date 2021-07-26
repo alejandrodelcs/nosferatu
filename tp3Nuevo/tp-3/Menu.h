@@ -4,6 +4,8 @@
 #include "constantes.h"
 #include "ABB.h"
 #include "tablero.h"
+#include "identificador.h"
+#include "juego.h"
 
 class Menu {
 
@@ -16,6 +18,8 @@ private:
 	ABB<string, Objeto*>* diccionarioPersonajes;
 
 	Tablero* tablero;
+
+	Identificador iden;
 
 	int pruebaId;
 
@@ -41,7 +45,7 @@ public:
 
 	void procesarOpcionPrincipal();
 
-	void procesarOpcionSimulacion();
+	void procesarOpcionSimulacion(Juego &nuevoJuego);
 
 	void mostrarTablero();
 

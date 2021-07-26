@@ -12,7 +12,8 @@ public:
     void mostrar();
     void atacar(){};
     void defender(){};
-
+    bool tomar_objeto(std::string objeto,int cant);
+    bool esta_en_rango(int fila,int col);
 };
 
 #endif //TP2_ZOMBIE_H

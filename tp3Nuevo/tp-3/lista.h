@@ -39,6 +39,17 @@ public:
 	//POS: Devuelve el dato contenido en el nodo.
 	Dato consulta(int posicion);
 
+
+	void eliminarDato(int posicion);
+
+//	int contador = 0;
+//	while (haySiguiente()){
+//		contador++;
+//		Ser* personajeActual = siguiente();
+//		if (personajeActual->obtenerId() == IdMuerto)
+//			eliminarDato(i);
+//	}
+
 	int obtenerPosicion(Dato dato);
 
 	//PRE:
@@ -63,7 +74,7 @@ public:
 
 	//PRE:
 	//POS: Verifica si un dato se encuentra dentro de la lista.
-	bool esta(Dato dato);
+	bool estaEnLaLista(Dato dato);
 
 	int obtenerLargo();
 };
@@ -166,7 +177,7 @@ Dato Lista<Dato>::siguiente(){
 }
 
 template <typename Dato>
-bool Lista<Dato>::esta(Dato dato) {
+bool Lista<Dato>::estaEnLaLista(Dato dato) {
     bool encontrado = false;
     reiniciarActual();
     while (haySiguiente() && ! encontrado) {
@@ -180,5 +191,24 @@ template <typename Dato>
 int Lista<Dato>::obtenerLargo(){
 	return largo;
 }
+
+
+template <typename Dato>
+void Lista<Dato>::eliminarDato(int posicion){
+	if (posicion == 1){
+		Nodo<Dato>* nodoABorrar = primero;
+		primero = nodoABorrar -> obtenerSiguiente();
+		delete nodoABorrar;
+	}
+	else{
+		Nodo<Dato>* anterior = obtenerNodo(posicion - 1);
+		Nodo<Dato>* nodoABorrar = anterior -> obtenerSiguiente();
+		anterior -> cambiarSiguiente(nodoABorrar -> obtenerSiguiente());
+		delete nodoABorrar;
+	}
+	reiniciarActual();
+	largo--;
+}
+
 
 #endif /* LISTA_H_ */

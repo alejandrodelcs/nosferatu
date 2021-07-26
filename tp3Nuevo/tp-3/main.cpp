@@ -5,7 +5,7 @@
 #include "tablero.h"
 #include "ABB.h"
 #include "objeto.h"
-#include "Grafo.h"
+//#include "Grafo.h"
 
 #include "Menu.h"
 
@@ -27,26 +27,30 @@ int main() {
 
 	cout << "checkpoint" << endl;
 
-    Grafo grafoHumanos;
-    grafoHumanos.crearMatrizAdyacencia(nuevoTablero);
-    grafoHumanos.cargarCaminosTablero(nuevoTablero, HUMANO);
-    Grafo grafoCazadores;
-    grafoCazadores.crearMatrizAdyacencia(nuevoTablero);
-    grafoCazadores.cargarCaminosTablero(nuevoTablero, CAZADOR);
-    Grafo grafoVampiros;
-    grafoVampiros.crearMatrizAdyacencia(nuevoTablero);
-    grafoVampiros.cargarCaminosTablero(nuevoTablero, VAMPIRO);
-    Grafo grafoZombies;
-    grafoZombies.crearMatrizAdyacencia(nuevoTablero);
-    grafoZombies.cargarCaminosTablero(nuevoTablero, ZOMBIE);
+//    Grafo grafoHumanos;
+//    grafoHumanos.crearMatrizAdyacencia(nuevoTablero);
+//    grafoHumanos.cargarCaminosTablero(nuevoTablero, HUMANO);
+//    Grafo grafoCazadores;
+//    grafoCazadores.crearMatrizAdyacencia(nuevoTablero);
+//    grafoCazadores.cargarCaminosTablero(nuevoTablero, CAZADOR);
+//    Grafo grafoVampiros;
+//    grafoVampiros.crearMatrizAdyacencia(nuevoTablero);
+//    grafoVampiros.cargarCaminosTablero(nuevoTablero, VAMPIRO);
+//    Grafo grafoZombies;
+//    grafoZombies.crearMatrizAdyacencia(nuevoTablero);
+//    grafoZombies.cargarCaminosTablero(nuevoTablero, ZOMBIE);
+//
+//
+//    Lista<Coordenadas*>* movimientos = new Lista<Coordenadas*>();
+//    int energiaNecesaria = 0;
+//    grafoHumanos.calcularMatricesFloyd();
+//    grafoHumanos.caminoMinimo(nuevoTablero->obtenerCasillero(0,0), nuevoTablero->obtenerCasillero(4,4), nuevoTablero, movimientos, energiaNecesaria);
+//    cout << energiaNecesaria << endl;
 
 
-    Lista<Coordenadas*>* movimientos = new Lista<Coordenadas*>();
-    int energiaNecesaria = 0;
-    grafoHumanos.calcularMatricesFloyd();
-    grafoHumanos.caminoMinimo(nuevoTablero->obtenerCasillero(0,0), nuevoTablero->obtenerCasillero(4,4), nuevoTablero, movimientos, energiaNecesaria);
-    cout << energiaNecesaria << endl;
-
+    //Lista<Ser*> personajesBuenos;
+    //Lista<Ser*> personajesMalos;
+    //Juego nuevoJuego(PersonajesBuenos, PersonajesMalos, Tablero)
 //	std::cout << "busca" << std::endl;
 //	diccionarioPersonajes->buscar("456");
 //	std::cout << "termina busqueda" << std::endl;
@@ -72,13 +76,13 @@ int main() {
 
 
     //FUNCION PARA BORRAR LOS OBJETOS DE TIPO COORDENADAS QUE ESTAN DENTRO DE LOS NODOS DE LA LISTA
-    for (int i = 1; i <= movimientos->obtenerLargo(); i++){
-    	Coordenadas* coord = movimientos->consulta(i);
-    	//cout << "CoordX: " << coord->obtenerCoordenadaX() << "CoordY: " << coord->obtenerCoordenadaY() << endl;
-    	delete coord;
-    }
-
-    delete movimientos;
+//    for (int i = 1; i <= movimientos->obtenerLargo(); i++){
+//    	Coordenadas* coord = movimientos->consulta(i);
+//    	//cout << "CoordX: " << coord->obtenerCoordenadaX() << "CoordY: " << coord->obtenerCoordenadaY() << endl;
+//    	delete coord;
+//    }
+//
+//    delete movimientos;
 
 	delete nuevoTablero;
 	delete diccionarioPersonajes;

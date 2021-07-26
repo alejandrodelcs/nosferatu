@@ -8,6 +8,7 @@ Menu::Menu(ABB<string, Objeto*>* diccionarioPersonajes, Tablero* tablero) {
 	this->diccionarioPersonajes = diccionarioPersonajes;
 	this->tablero = tablero;
 	this->pruebaId = 500;
+    iden.inicializar(diccionarioPersonajes);
 
 }
 
@@ -20,6 +21,58 @@ void Menu::mostrarMenuPrincipal(){
 	std::cout << "5.Buscar por ID los detalles de un personaje u objeto" << std::endl;
 	std::cout << "6.Comenzar simulacion" << std::endl;
 	std::cout << "7.Salir" << std::endl;
+}
+
+
+void Menu::procesarOpcionPrincipal(){
+
+	switch(opcionPrincipal){
+
+	case AGREGAR_PERSONAJE_U_OBJETO:
+		std::cout << "- AGREGANDO PERSONAJE U OBJETO -" << std::endl;
+		agregarDato();
+		break;
+
+	case ELIMINAR_PERSONAJE_U_OBJETO:
+		std::cout << "- ELIMINANDO PERSONAJE U OBJETO -" << std::endl;
+		mostrarTablero();
+		eliminarDato();
+		break;
+
+	case MOSTRAR_TABLERO:
+		std::cout << "- MOSTRANDO TABLERO -" << std::endl;
+		mostrarTablero();
+		break;
+
+	case BUSCAR_POR_CUADRANTE:
+		std::cout << "- BUSCAR POR CUADRANTE -" << std::endl;
+		break;
+
+	case BUSCAR_POR_ID:
+		std::cout << "- BUSCANDO POR ID -" << std::endl;
+		buscarPersonajePorId();
+		break;
+
+	case COMENZAR_SIMULACION:{
+		std::cout << std::endl;
+	    std::cout << "- COMENZANDO SIMULACION - " << std::endl;
+	    Juego nuevoJuego;
+	    nuevoJuego.crearEquipos(tablero);
+	    ingresarOpcionSimulacion();
+	    while (opcionSimulacion != SALIR_SIMULACION){
+	    	procesarOpcionSimulacion(nuevoJuego);
+	    	std::cout << std::endl;
+	    	ingresarOpcionSimulacion();
+	    }
+	    break;
+	}
+
+	case SALIR_MENU_PRINCIPAL:
+		std::cout << "- SALIENDO -" << std::endl;
+		break;
+
+	//default: std::cout << "Dudo que informe esta opcion e.e" << std::endl;
+	}
 }
 
 void Menu::ingresarOpcionPrincipal(){
@@ -67,12 +120,13 @@ int Menu::obtenerOpcionSimulacion(){
 	return this->opcionSimulacion;
 }
 
-void Menu::procesarOpcionSimulacion(){
+void Menu::procesarOpcionSimulacion(Juego &nuevoJuego){
 
 	switch(opcionSimulacion){
 
 	case BUSCAR_POR_ID_SIMULACION:
 		std::cout << "- BUSCANDO POR ID -(SIMULACION)-" << std::endl;
+		buscarPersonajePorId();
 		break;
 
 	case MOSTRAR_TABLERO_SIMULACION:
@@ -82,10 +136,12 @@ void Menu::procesarOpcionSimulacion(){
 
 	case MOSTRAR_CANTIDAD_DE_INTEGRANTES_DE_UN_BANDO_SIMULACION:
 		std:: cout << "MOSTRANDO CANTIDAD DE INTEGRANTES X BANDO -(SIMULACION)" << std::endl;
+		nuevoJuego.mostrarCantidadPersonajes();
 		break;
 
 	case SELECCIONAR_BANDO_SIMULACION:
 		std::cout << "SELECCIONANDO BANDO -(SIMULACION)-" << std::endl;
+		//nuevoJuego.comenzarJuego();
 		break;
 
 	case SALIR_SIMULACION:
@@ -96,51 +152,7 @@ void Menu::procesarOpcionSimulacion(){
 	}
 }
 
-void Menu::procesarOpcionPrincipal(){
 
-	switch(opcionPrincipal){
-
-	case AGREGAR_PERSONAJE_U_OBJETO:
-		std::cout << "- AGREGANDO PERSONAJE U OBJETO -" << std::endl;
-		agregarDato();
-		break;
-
-	case ELIMINAR_PERSONAJE_U_OBJETO:
-		std::cout << "- ELIMINANDO PERSONAJE U OBJETO -" << std::endl;
-		mostrarTablero();
-		eliminarDato();
-		break;
-
-	case MOSTRAR_TABLERO:
-		std::cout << "- MOSTRANDO TABLERO -" << std::endl;
-		mostrarTablero();
-		break;
-
-	case BUSCAR_POR_CUADRANTE:
-		std::cout << "- BUSCAR POR CUADRANTE -" << std::endl;
-		break;
-
-	case BUSCAR_POR_ID:
-		std::cout << "- BUSCANDO POR ID -" << std::endl;
-		buscarPersonajePorId();
-		break;
-
-	case COMENZAR_SIMULACION: std::cout << std::endl;
-							  std::cout << "- COMENZANDO SIMULACION - " << std::endl;
-							  ingresarOpcionSimulacion();
-							  while (opcionSimulacion != SALIR_SIMULACION){
-								  procesarOpcionSimulacion();
-								  std::cout << std::endl;
-								  ingresarOpcionSimulacion();
-							  }
-							  break;
-
-	case SALIR_MENU_PRINCIPAL: std::cout << "- SALIENDO -" << std::endl;
-							   break;
-
-	//default: std::cout << "Dudo que informe esta opcion e.e" << std::endl;
-	}
-}
 
 
 //---------------DESDE ACÁ IMPLEMENTACION DE LAS OPCIONES DEL MENÚ----------------------------
@@ -205,9 +217,9 @@ void Menu::agregarDato(){
 	int posicionY = -1;
 	int opcion;
 	pedirCoordenadas(posicionX, posicionY);
-	mostrarOpcionesAAgregar();
 
 	if (tablero->esPosicionValida(posicionX, posicionY)){
+		mostrarOpcionesAAgregar();
 		std::cout << "Ingrese el tipo de elemento que desea agregar: ";
 		std::cin >> opcion;
 		validarOpcion(opcion, 1, 13);
@@ -225,7 +237,7 @@ void Menu::agregarDato(){
 
 void Menu::crearSer(int posicionX, int posicionY, int opcion){
 	Ser* aux;
-	std::string nuevoId = to_string(pruebaId);
+	std::string nuevoId = iden.dar_codigo(opcion);
 	if (tablero->obtenerCasillero(posicionX, posicionY)->hayPersonaje() || tablero->obtenerCasillero(posicionX, posicionY)->hayElemento())
 		std::cout << "Este casillero está ocupado" << std::endl;
 	else{

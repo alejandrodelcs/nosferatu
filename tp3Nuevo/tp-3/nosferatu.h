@@ -13,7 +13,8 @@ public:
 
     void atacar(){};
     void defender(){};
-
+    bool tomar_objeto(std::string elemento,int cant);
+    bool esta_en_rango(int fila,int col);
 };
 
 #endif //TP2_NOSFERATU_H
