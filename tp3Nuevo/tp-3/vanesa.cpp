@@ -158,7 +158,3 @@ void Vanesa::recibir_ataque(int ataque) {
     else if(armadura>2)ataque=ataque*0.2;
     vida -=ataque;
 }
-
-int Vanesa::obtener_energia() {
-    return  energia;
-}

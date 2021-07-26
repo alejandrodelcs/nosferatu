@@ -29,7 +29,6 @@ public:
 
     void defender();
 
-    int obtener_energia();
 private:
     bool rango_escopeta(int fila,int col);
     bool rango_agua(int fila,int col);

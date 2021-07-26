@@ -52,6 +52,3 @@ void Nosferatu::recuperarEnergia() {
 void Nosferatu::defender() {
 
 }
-int Nosferatu::obtener_energia() {
-    return energia;
-}

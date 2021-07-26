@@ -16,7 +16,7 @@ public:
 	int asignarArmdura();
 	int obtenerVida();
 	int obtenerAtaque();
-	virtual int obtener_energia() =0;
+	int obtener_energia();
 	virtual int atacar(int fila,int col,std::string simbolo) = 0;
 	virtual void defender() = 0;
 	virtual bool esta_en_rango(int fila,int col) = 0;

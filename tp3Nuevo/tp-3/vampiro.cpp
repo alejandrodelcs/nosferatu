@@ -58,6 +58,3 @@ void Vampiro::recibir_ataque(int ataque){
     else if(armadura>2)ataque=ataque*0.2;
     vida -=ataque;
 }
-int Vampiro::obtener_energia() {
-    return energia;
-}

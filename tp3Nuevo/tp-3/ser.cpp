@@ -21,3 +21,6 @@ int Ser::obtenerVida() {
 int Ser::obtenerAtaque() {
     return this->ataque;
 }
+int Ser::obtener_energia() {
+    return energia;
+}

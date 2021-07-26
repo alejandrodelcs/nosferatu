@@ -56,6 +56,3 @@ void Vampirella::recibir_ataque(int ataque){
     else if(armadura>2)ataque=ataque*0.2;
     vida -=ataque;
 }
-int Vampirella::obtener_energia() {
-    return energia;
-}

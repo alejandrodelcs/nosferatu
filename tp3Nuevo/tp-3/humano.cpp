@@ -112,6 +112,3 @@ void Humano::recibir_ataque(int ataque){
     else if(armadura>2)ataque=ataque*0.2;
     vida -=ataque;
 }
-int Humano::obtener_energia() {
-    return energia;
-}

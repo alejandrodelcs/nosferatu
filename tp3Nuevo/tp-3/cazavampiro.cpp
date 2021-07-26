@@ -157,6 +157,3 @@ void Cazavampiro::defender(){
         vida +=50;
     }
 }
-int Cazavampiro::obtener_energia() {
-    return energia;
-}
