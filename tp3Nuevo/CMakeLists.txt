@@ -1,0 +1,67 @@
+cmake_minimum_required(VERSION 3.19)
+project(tp3Nuevo)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(tp-3)
+
+add_executable(tp3Nuevo
+        tp-3/ABB.h
+        tp-3/agua.cpp
+        tp-3/agua.h
+        tp-3/balas.cpp
+        tp-3/balas.h
+        tp-3/casillero.cpp
+        tp-3/casillero.h
+        tp-3/cazavampiro.cpp
+        tp-3/cazavampiro.h
+        tp-3/constantes.h
+        tp-3/coordenadas.cpp
+        tp-3/coordenadas.h
+        tp-3/cruz.cpp
+        tp-3/cruz.h
+        tp-3/elemento.cpp
+        tp-3/elemento.h
+        tp-3/escopeta.cpp
+        tp-3/escopeta.h
+        tp-3/estaca.cpp
+        tp-3/estaca.h
+        tp-3/estado.cpp
+        tp-3/estado.h
+        tp-3/Floyd.cpp
+        tp-3/Floyd.h
+        tp-3/Grafo.cpp
+        tp-3/Grafo.h
+        tp-3/humano.cpp
+        tp-3/humano.h
+        tp-3/identificador.cpp
+        tp-3/identificador.h
+        tp-3/interacciones.cpp
+        tp-3/interacciones.h
+        tp-3/juego.cpp
+        tp-3/juego.h
+        tp-3/lista.h
+        tp-3/main.cpp
+        tp-3/mapa.cpp
+        tp-3/mapa.h
+        tp-3/Menu.cpp
+        tp-3/Menu.h
+        tp-3/monstruo.h
+        tp-3/nodo.h
+        tp-3/NodoABB.h
+        tp-3/nosferatu.cpp
+        tp-3/nosferatu.h
+        tp-3/objeto.cpp
+        tp-3/objeto.h
+        tp-3/ser.cpp
+        tp-3/ser.h
+        tp-3/tablero.cpp
+        tp-3/tablero.h
+        tp-3/vampirella.cpp
+        tp-3/vampirella.h
+        tp-3/vampiro.cpp
+        tp-3/vampiro.h
+        tp-3/vanesa.cpp
+        tp-3/vanesa.h
+        tp-3/zombi.cpp
+        tp-3/zombi.h)

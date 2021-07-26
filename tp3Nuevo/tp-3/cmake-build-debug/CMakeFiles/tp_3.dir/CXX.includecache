@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cesar/Escritorio/tp3Nuevo/tp-3/cazavampiro.h
+humano.h
+/home/cesar/Escritorio/tp3Nuevo/tp-3/humano.h
+
+/home/cesar/Escritorio/tp3Nuevo/tp-3/humano.h
+ser.h
+/home/cesar/Escritorio/tp3Nuevo/tp-3/ser.h
+
+/home/cesar/Escritorio/tp3Nuevo/tp-3/objeto.h
+iostream
+/home/cesar/Escritorio/tp3Nuevo/tp-3/iostream
+string
+-
+
+/home/cesar/Escritorio/tp3Nuevo/tp-3/ser.h
+objeto.h
+/home/cesar/Escritorio/tp3Nuevo/tp-3/objeto.h
+
+/home/cesar/Escritorio/tp3Nuevo/tp-3/vanesa.cpp
+vanesa.h
+/home/cesar/Escritorio/tp3Nuevo/tp-3/vanesa.h
+
+/home/cesar/Escritorio/tp3Nuevo/tp-3/vanesa.h
+cazavampiro.h
+/home/cesar/Escritorio/tp3Nuevo/tp-3/cazavampiro.h
+

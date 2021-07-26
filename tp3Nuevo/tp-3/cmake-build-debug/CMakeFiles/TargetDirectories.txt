@@ -1,0 +1,3 @@
+/home/cesar/Escritorio/tp3Nuevo/tp-3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cesar/Escritorio/tp3Nuevo/tp-3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/cesar/Escritorio/tp3Nuevo/tp-3/cmake-build-debug/CMakeFiles/tp_3.dir
