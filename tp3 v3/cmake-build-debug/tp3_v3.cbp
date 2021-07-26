@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="tp3_v3"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/cesar/github/Mytest/nosferatu/tp3 v3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/cesar/github/Mytest/nosferatu/tp3 v3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/cesar/github/Mytest/nosferatu/tp3 v3/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tp3_v3">
+				<Option output="/home/cesar/github/Mytest/nosferatu/tp3 v3/cmake-build-debug/tp3_v3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cesar/github/Mytest/nosferatu/tp3 v3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/cesar/github/Mytest/nosferatu/tp3 v3/."/>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 tp3_v3"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tp3_v3/fast">
+				<Option output="/home/cesar/github/Mytest/nosferatu/tp3 v3/cmake-build-debug/tp3_v3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cesar/github/Mytest/nosferatu/tp3 v3/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/cesar/github/Mytest/nosferatu/tp3 v3/."/>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 tp3_v3/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/cesar/github/Mytest/nosferatu/tp3\ v3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/ABB.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/Floyd.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/Floyd.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/Grafo.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/Grafo.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/Menu.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/Menu.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/NodoABB.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/agua.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/agua.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/balas.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/balas.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/casillero.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/casillero.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/cazavampiro.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/cazavampiro.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/constantes.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/coordenadas.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/coordenadas.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/cruz.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/cruz.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/elemento.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/elemento.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/escopeta.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/escopeta.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/estaca.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/estaca.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/estado.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/estado.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/humano.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/humano.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/identificador.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/identificador.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/interacciones.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/interacciones.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/juego.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/juego.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/lista.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/main.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/mapa.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/mapa.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/monstruo.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/nodo.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/nosferatu.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/nosferatu.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/objeto.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/objeto.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/ser.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/ser.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/tablero.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/tablero.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/vampirella.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/vampirella.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/vampiro.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/vampiro.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/vanesa.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/vanesa.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/zombi.cpp">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/zombi.h">
+			<Option target="tp3_v3"/>
+		</Unit>
+		<Unit filename="/home/cesar/github/Mytest/nosferatu/tp3 v3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

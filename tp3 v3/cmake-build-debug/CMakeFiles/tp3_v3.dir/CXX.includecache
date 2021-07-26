@@ -1,0 +1,86 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/Floyd.h
+string
+-
+lista.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/lista.h
+casillero.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/casillero.h
+iostream
+-
+tablero.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/tablero.h
+coordenadas.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/coordenadas.h
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/Grafo.h
+string
+-
+casillero.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/casillero.h
+Floyd.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/Floyd.h
+tablero.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/tablero.h
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/casillero.h
+string
+-
+ser.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/ser.h
+elemento.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/elemento.h
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/coordenadas.h
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/elemento.h
+objeto.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/objeto.h
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/juego.cpp
+juego.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/juego.h
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/juego.h
+ser.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/ser.h
+tablero.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/tablero.h
+Grafo.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/Grafo.h
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/lista.h
+nodo.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/nodo.h
+iostream
+-
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/nodo.h
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/objeto.h
+iostream
+/home/cesar/github/Mytest/nosferatu/tp3 v3/iostream
+string
+-
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/ser.h
+objeto.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/objeto.h
+
+/home/cesar/github/Mytest/nosferatu/tp3 v3/tablero.h
+iostream
+-
+string
+-
+casillero.h
+/home/cesar/github/Mytest/nosferatu/tp3 v3/casillero.h
+fstream
+-
+
