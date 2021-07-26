@@ -203,8 +203,11 @@ void Juego::moverse(Ser* personaje, Tablero* tablero){
 	if (! esCaminoValido(movimientos, tablero))
 		std::cout << "El camino está bloqueado\n";
 	else{
+
 		movimientos->reiniciarActual();
-		movimientos->siguiente(); //coord 4,4
+		if (movimientos->haySiguiente())
+			movimientos->siguiente(); //coord 4,4
+
 		while (movimientos->haySiguiente()){
 			tablero->mostrarTableroObjetos();
 			std::cout << std::endl;
@@ -217,7 +220,6 @@ void Juego::moverse(Ser* personaje, Tablero* tablero){
 		}
 	}
 	eliminarListaMovimientos(movimientos);
-
 }
 
 

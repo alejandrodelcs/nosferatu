@@ -35,5 +35,4 @@ string Identificador::dar_codigo(int opcion) {
         min++;
     }
     return nullptr;
-    std::cout<<"puto";
 }

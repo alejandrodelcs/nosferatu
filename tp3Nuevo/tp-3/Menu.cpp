@@ -7,7 +7,6 @@ Menu::Menu(ABB<string, Objeto*>* diccionarioPersonajes, Tablero* tablero) {
 	this->opcionSimulacion = 0;
 	this->diccionarioPersonajes = diccionarioPersonajes;
 	this->tablero = tablero;
-	this->pruebaId = 500;
     iden.inicializar(diccionarioPersonajes);
 
 }
@@ -259,14 +258,13 @@ void Menu::crearSer(int posicionX, int posicionY, int opcion){
 		tablero->agregarDato(posicionX, posicionY, aux);
 		diccionarioPersonajes->agregarDato(nuevoId, aux);
 		std::cout << nuevoId << std::endl;
-		pruebaId++;
 	}
 }
 
 
 void Menu::crearElemento(int posicionX, int posicionY, int opcion){
 	Elemento* aux;
-	std::string nuevoId = to_string(pruebaId);
+	std::string nuevoId = iden.dar_codigo(opcion);
 	if (tablero->obtenerCasillero(posicionX, posicionY)->hayPersonaje() || tablero->obtenerCasillero(posicionX, posicionY)->hayElemento())
 		std::cout << "Este casillero está ocupado" << std::endl;
 	else{
@@ -284,7 +282,6 @@ void Menu::crearElemento(int posicionX, int posicionY, int opcion){
 		tablero->agregarDato(posicionX, posicionY, aux);
 		diccionarioPersonajes->agregarDato(nuevoId, aux);
 		std::cout << nuevoId << std::endl;
-		pruebaId++;
 	}
 }
 

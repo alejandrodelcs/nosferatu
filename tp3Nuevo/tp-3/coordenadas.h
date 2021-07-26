@@ -8,8 +8,15 @@ private:
 	int coordenadaX;
 	int coordenadaY;
 public:
+
 	Coordenadas(int coordenadaX, int coordenadaY);
+
+	//PRE:
+	//POS: Devuelve la coordenada X
 	int obtenerCoordenadaX();
+
+	//PRE:
+	//POS: Devuelve la coordenada Y
 	int obtenerCoordenadaY();
 };
 
