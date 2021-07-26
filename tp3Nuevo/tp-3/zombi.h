@@ -10,10 +10,13 @@ public:
     std::string obtenerSimbolo();
 
     void mostrar();
-    void atacar(){};
-    void defender(){};
+    int atacar(int fila, int col,std::string simbolo);
+    void defender();
     bool tomar_objeto(std::string objeto,int cant);
     bool esta_en_rango(int fila,int col);
+    void recuperarEnergia();
+    void recibir_ataque(int ataque);
+
 };
 
 #endif //TP2_ZOMBIE_H

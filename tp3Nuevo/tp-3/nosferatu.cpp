@@ -7,6 +7,8 @@ Nosferatu::Nosferatu(int fila, int columna, const std::string& id) : Vampiro(fil
     this->id = id;
     this->vida = asignarVida();
     this->ataque = asignarAtaque();
+    this->energia = asignarEnergia();
+    this->armadura = asignarArmdura();
 }
 
 std::string Nosferatu::obtenerSimbolo() {
@@ -15,7 +17,9 @@ std::string Nosferatu::obtenerSimbolo() {
 
 
 void Nosferatu::mostrar() {
-    std::cout << "Nosferatu" << std::endl;
+    std::cout << "Nozferatu " << fila<<" "<< columna<<std::endl;
+    std::cout<< "armadura "<<armadura<<std::endl;
+    std::cout<< "energia "<<energia<<std::endl;
 }
 
 bool Nosferatu::tomar_objeto(std::string objeto, int cant) {
@@ -27,4 +31,24 @@ bool Nosferatu::tomar_objeto(std::string objeto, int cant) {
 }
 bool Nosferatu::esta_en_rango(int fila, int col) {
     return(fila<=this->fila+2 && col<=this->columna+2);
+}
+
+int Nosferatu::atacar(int fila, int col, std::string simbolo) {
+    int danio=0;
+    if(energia<10)std::cout<<"energia insuficiente"<<std::endl;
+    else if(esta_en_rango(fila,col))danio=ataque;
+    return danio;
+}
+void Nosferatu::recibir_ataque(int ataque) {
+    if(armadura==1)ataque=ataque*0.9;
+    else if(armadura==2)ataque=ataque*0.8;
+    else if(armadura>2)ataque=ataque*0.2;
+    vida -=ataque;
+}
+void Nosferatu::recuperarEnergia() {
+    if (energia + 10 >20) energia=20;
+    else energia+=10;
+}
+void Nosferatu::defender() {
+
 }

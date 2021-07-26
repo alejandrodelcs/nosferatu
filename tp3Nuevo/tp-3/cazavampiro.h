@@ -9,6 +9,7 @@ private:
     int municion;
     int estacas;
     int agua;
+    int cruces;
 public:
     Cazavampiro(int fila, int columna, std::string id);
 
@@ -19,6 +20,15 @@ public:
     bool esta_en_rango(int fila,int col);
 
     bool tomar_objeto(std::string objeto,int cant);
+
+    void recuperarEnergia();
+
+    void recibir_ataque(int ataque);
+
+    int atacar(int fila, int col,std::string simbolo);
+
+    void defender();
+
 private:
     bool rango_escopeta(int fila,int col);
     bool rango_agua(int fila,int col);

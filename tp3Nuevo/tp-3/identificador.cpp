@@ -9,7 +9,7 @@ void Identificador::inicializar(ABB<string, Objeto *> *diccionarioPersonajes){
 
 string Identificador::dar_codigo(int opcion) {
     int min, max;
-    string resultado;
+    string resultado = "nulo";
     if (opcion == 1) min = 1, max = 49;
     else if (opcion == 2) min = 50, max = 99;
     else if (opcion == 3) min = 0, max = 1;
@@ -28,11 +28,13 @@ string Identificador::dar_codigo(int opcion) {
             resultado = "00" + to_string(min);
         } else if (min >= 10 && min < 100)
             resultado = "0" + to_string(min);
+        else
+        	resultado = to_string(min);
 
         if (!diccionarioPersonajes->esta(resultado)) {
             return resultado;
         }
         min++;
     }
-    return nullptr;
+    return resultado;
 }
