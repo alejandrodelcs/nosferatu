@@ -24,3 +24,6 @@ int Ser::obtenerAtaque() {
 int Ser::obtener_energia() {
     return energia;
 }
+void Ser::modificarEnergia(int gasto) {
+    energia=gasto;
+}

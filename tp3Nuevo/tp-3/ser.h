@@ -17,6 +17,7 @@ public:
 	int obtenerVida();
 	int obtenerAtaque();
 	int obtener_energia();
+	void modificarEnergia(int gasto);
 	virtual int atacar(int fila,int col,std::string simbolo) = 0;
 	virtual void defender() = 0;
 	virtual bool esta_en_rango(int fila,int col) = 0;
