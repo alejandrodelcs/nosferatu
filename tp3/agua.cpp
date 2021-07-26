@@ -13,7 +13,8 @@ std::string Agua::obtenerSimbolo() {
 }
 
 void Agua::mostrar() {
-    std::cout << "agua" << std::endl;
+    std::cout << "Agua" << std::endl;
+    std::cout << "Cantidad: " << cantidad << std::endl;
 }
 
 

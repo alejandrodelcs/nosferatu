@@ -58,6 +58,12 @@ public:
 	//POS: Deja el casillero sin elemento haciendo que el puntero apunte a nullptr y que hayElementoEnCasillero sea falso.
 	void quitarElemento();
 
+	//PRE:
+	//POS: Devuelve el costo del terreno para la clase que pasa sobre el mismo.
+	int obtenerCostoTerreno(std::string clase);
+
+	~Casillero();
+
 };
 
 

@@ -9,11 +9,20 @@ private:
     NodoAB<Clave, Valor>* raiz;
     NodoAB<Clave, Valor>* actual;
 
+    //PRE:
+    //POS: Agrega un nuevo nodo al arbol diccionario.
     void agregarNodo(NodoAB<Clave, Valor>* nuevo_nodo);
 
+    //PRE:
+    //POS: Imprime el arbol diccionario en orden (claves ascendientes).
     void imprimirArbol(NodoAB<Clave, Valor>* raiz);
 
+    //PRE: La clave se encuentra en el diccionario.
+    //POS: Busca un clave en el diccionario y devuelve su valor.
     NodoAB<Clave, Valor>* buscar(Clave clave, NodoAB<Clave, Valor>* raiz);
+
+    //PRE:
+    //POS: Devuelve true si la clave se encuentra en el diccionario, false en caso contrario.
     bool esta(Clave clave, NodoAB<Clave, Valor>* nodo);
 
     void eliminarNodo(NodoAB<Clave, Valor>* nodo_eliminar);
@@ -23,25 +32,47 @@ private:
     void eliminarNodoConDosHijos(NodoAB<Clave, Valor>* nodo_eliminar);
     void eliminarRaiz();
 
+    //PRE:
+    //POS: Busca el hijo del nodo, que se encuentra más a la derecha.
     NodoAB<Clave, Valor>* encontrarPredecesor(NodoAB<Clave, Valor>* nodo);
 
 
 public:
+
+    //PRE:
+    //POS: Crea un arbol binario diccionario
     ABB();
+
+    //PRE:
+    //POS: Devuelve true si el diccionario está vacío, false en caso contrario.
     bool estaVacio();
+
+    //PRE:
+    //POS: Máscara a la cuál se le pasa la clave y el valor y crea un nuevo nodo que luego es
+    //     agregado al diccionario mediante la función agregarDato(Nodo).
     void agregarDato(Clave clave, Valor valor);
+
+    //PRE:
+    //POS: Máscara que llama a la función imprimir árbol, que imprime el diccionario en orden de claves
+    //     ascendentes.
     void imprimirArbol();
 
-    //PRE: La clave se encuentra en el arbol
+    //PRE: La clave se encuentra en el diccionario
+    //POS: Máscara que llama a la función buscar().
     Valor buscar(Clave clave);
 
+    //PRE:
+    //POS: Máscara que llama a la función esta()
     bool esta(Clave clave);
 
+    //PRE: La clave está en el diccionario
+    //POS: Máscara que llama a la función eliminarNodo().
     void eliminarNodo(Clave clave);
 
-    void imprimirPadre(Clave clave);
-    void imprimirIzquierdo(Clave clave);
-    void imprimirDerecho(Clave clave);
+    //MÉTODOS PARA VERIFICAR EL CORRECTO ARMADO DEL ARBOL
+    //void imprimirPadre(Clave clave);
+    //void imprimirIzquierdo(Clave clave);
+    //void imprimirDerecho(Clave clave);
 
     ~ABB();
 };
@@ -252,31 +283,6 @@ NodoAB<Clave, Valor>* ABB<Clave,Valor>::encontrarPredecesor(NodoAB<Clave, Valor>
     }
 }
 
-
-template <typename Clave, typename Valor>
-void ABB<Clave,Valor>::imprimirPadre(Clave clave){
-    NodoAB<Clave, Valor>* nodo = buscar(clave, raiz);
-    Clave clave_padre = nodo->obtenerPadre()->obtenerClave();
-    cout << clave_padre << endl;
-}
-
-
-template <typename Clave, typename Valor>
-void ABB<Clave,Valor>::imprimirIzquierdo(Clave clave){
-    NodoAB<Clave, Valor>* nodo = buscar(clave, raiz);
-    Clave clave_izquierdo = nodo->obtenerIzquierdo()->obtenerClave();
-    cout << clave_izquierdo << endl;
-}
-
-
-template <typename Clave, typename Valor>
-void ABB<Clave,Valor>::imprimirDerecho(Clave clave){
-    NodoAB<Clave, Valor>* nodo = buscar(clave, raiz);
-    Clave clave_derecho = nodo->obtenerDerecho()->obtenerClave();
-    cout << clave_derecho << endl;
-}
-
-
 template <typename Clave, typename Valor>
 void ABB<Clave,Valor>::eliminarRaiz(){
     if (raiz->esHoja()){
@@ -301,6 +307,33 @@ void ABB<Clave,Valor>::eliminarRaiz(){
         eliminarNodo(predecesor);
     }
 }
+
+
+//template <typename Clave, typename Valor>
+//void ABB<Clave,Valor>::imprimirPadre(Clave clave){
+//    NodoAB<Clave, Valor>* nodo = buscar(clave, raiz);
+//    Clave clave_padre = nodo->obtenerPadre()->obtenerClave();
+//    cout << clave_padre << endl;
+//}
+//
+//
+//template <typename Clave, typename Valor>
+//void ABB<Clave,Valor>::imprimirIzquierdo(Clave clave){
+//    NodoAB<Clave, Valor>* nodo = buscar(clave, raiz);
+//    Clave clave_izquierdo = nodo->obtenerIzquierdo()->obtenerClave();
+//    cout << clave_izquierdo << endl;
+//}
+//
+//
+//template <typename Clave, typename Valor>
+//void ABB<Clave,Valor>::imprimirDerecho(Clave clave){
+//    NodoAB<Clave, Valor>* nodo = buscar(clave, raiz);
+//    Clave clave_derecho = nodo->obtenerDerecho()->obtenerClave();
+//    cout << clave_derecho << endl;
+//}
+
+
+
 
 
 #endif /* ARBOL_BINARIO_H_ */

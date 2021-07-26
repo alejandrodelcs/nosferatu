@@ -108,7 +108,9 @@ public:
 	//POS: Elimina el tablero y los objetos presentes en el mismo, liberando la memoria utilizada.
 	~Tablero();
 
+	int obtenerCantidadFilas();
 
+	int obtenerCantidadColumnas();
 
 
 };
