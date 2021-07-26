@@ -99,7 +99,9 @@ void Floyd::caminoMinimo(int origen, int destino, Tablero* tablero, Lista<Coorde
 	int posicionOrigen[2];
 	int posicionDestino[2];
 	obtenerPosicionInversa(tablero, origen, posicionOrigen);
+	std::cout << posicionOrigen[0] << posicionOrigen[1] << std::endl;
 	obtenerPosicionInversa(tablero, destino, posicionDestino);
+	std::cout << posicionDestino[0] << posicionDestino[1] << std::endl;
 
     if(matrizCaminos[origen][destino] == POSICION_NO_ENCONTRADA){
         cout << "No hay un camino que conecte el casillero (" <<  posicionOrigen[0] << "," << posicionOrigen[1] << ") con (" << posicionDestino[0] << "," << posicionDestino[1] << ")"; //vertices->consulta(destino + 1);

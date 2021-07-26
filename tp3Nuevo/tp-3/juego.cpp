@@ -180,8 +180,8 @@ void Juego::validarOpcion(int &opcion,int opcionMinima,int opcionMaxima){
 void Juego::moverse(Ser* personaje, Tablero* tablero){
 	int energiaNecesaria = 0;
 	Lista<Coordenadas*>* movimientos = new Lista<Coordenadas*>();
-	int posicionInicialX = personaje->obtenerColumna();
-	int posicionInicialY = personaje->obtenerFila();
+	int posicionInicialX = personaje->obtenerFila();
+	int posicionInicialY = personaje->obtenerColumna();
 	int posicionFinalX;
 	int posicionFinalY;
 	obtenerNuevaPosicion(posicionFinalX, posicionFinalY);
@@ -211,18 +211,43 @@ void Juego::moverse(Ser* personaje, Tablero* tablero){
 
 			Coordenadas* coordenadasActual = movimientos->siguiente(); //coord 4,5
 			tablero->obtenerCasillero(coordenadasActual->obtenerCoordenadaX(), coordenadasActual->obtenerCoordenadaY())->asignarPersonaje(personaje);
-			tablero->obtenerCasillero(personaje->obtenerColumna(), personaje->obtenerFila())->quitarPersonaje();
-			personaje->asignarColumna(coordenadasActual->obtenerCoordenadaX());
-			personaje->asignarFila(coordenadasActual->obtenerCoordenadaY());
+			tablero->obtenerCasillero(personaje->obtenerFila(), personaje->obtenerColumna())->quitarPersonaje();
+			personaje->asignarColumna(coordenadasActual->obtenerCoordenadaY());
+			personaje->asignarFila(coordenadasActual->obtenerCoordenadaX());
 		}
 	}
+	eliminarListaMovimientos(movimientos);
+
+}
+
+
+//void Juego::calcularCamino(Ser* personaje, Tablero* tablero, Lista<Coordenadas*>* movimientos, int &energiaNecesaria){
+//	if (personaje->obtenerSimbolo() == "h")
+//				grafoHumanos.caminoMinimo(tablero->obtenerCasillero(posicionInicialX,posicionInicialY), tablero->obtenerCasillero(posicionFinalX, posicionFinalY), tablero, movimientos, energiaNecesaria);
+//			else if (personaje->obtenerSimbolo() == "H" || personaje->obtenerSimbolo() == "W")
+//				grafoCazadores.caminoMinimo(tablero->obtenerCasillero(posicionInicialX,posicionInicialY), tablero->obtenerCasillero(posicionFinalX, posicionFinalY), tablero, movimientos, energiaNecesaria);
+//			else if (personaje->obtenerSimbolo() == "v" || personaje->obtenerSimbolo() == "N" || personaje->obtenerSimbolo() == "V")
+//				grafoVampiros.caminoMinimo(tablero->obtenerCasillero(posicionInicialX,posicionInicialY), tablero->obtenerCasillero(posicionFinalX, posicionFinalY), tablero, movimientos, energiaNecesaria);
+//			else
+//				grafoZombies.caminoMinimo(tablero->obtenerCasillero(posicionInicialX,posicionInicialY), tablero->obtenerCasillero(posicionFinalX, posicionFinalY), tablero, movimientos, energiaNecesaria);
+//}
+
+
+void Juego::eliminarListaMovimientos(Lista<Coordenadas*>* movimientos){
+	movimientos->reiniciarActual();
+	while (movimientos->haySiguiente()){
+		Coordenadas* coordenadas = movimientos->siguiente();
+		delete coordenadas;
+	}
+	delete movimientos;
 
 }
 
 bool Juego::esCaminoValido(Lista<Coordenadas*>* movimientos, Tablero* tablero){
 	bool esValido = true;
 	movimientos->reiniciarActual();
-	movimientos->siguiente();
+	if (movimientos->haySiguiente())
+		movimientos->siguiente();
 	while (movimientos->haySiguiente() && esValido == true){
 		Coordenadas* coordenadasActual = movimientos->siguiente();
 		if (tablero->obtenerCasillero(coordenadasActual->obtenerCoordenadaX(), coordenadasActual->obtenerCoordenadaY())->hayPersonaje())

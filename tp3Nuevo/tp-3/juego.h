@@ -59,6 +59,10 @@ public:
 
 	bool esCaminoValido(Lista<Coordenadas*>* movimientos, Tablero* tablero);
 
+	void eliminarListaMovimientos(Lista<Coordenadas*>* movimientos);
+
+	//void calcularCamino(Ser* personaje, Tablero* tablero, Lista<Coordenadas*>* movimientos, int &energiaNecesaria);
+
 	~Juego();
 
 };
