@@ -27,6 +27,7 @@ int main() {
 
 	cout << "checkpoint" << endl;
 
+
 //    Grafo grafoHumanos;
 //    grafoHumanos.crearMatrizAdyacencia(nuevoTablero);
 //    grafoHumanos.cargarCaminosTablero(nuevoTablero, HUMANO);

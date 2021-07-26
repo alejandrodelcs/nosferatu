@@ -4,12 +4,8 @@
 //Juego::Juego(){
 //	this->personajesBuenos = nullptr;
 //	this->personajesMalos = nullptr;
-//}
-
-
-//void Juego::inicializar(Lista<Ser*>* personajesBuenos, Lista<Ser*>* personajesMalos){
-//	this->personajesBuenos = personajesBuenos;
-//	this->personajesMalos = personajesMalos;
+//	Lista<Ser*>* jugador1 = nullptr;
+//	Lista<Ser*>* jugador2 = nullptr;
 //}
 
 
@@ -43,30 +39,105 @@ void Juego::mostrarCantidadPersonajes(){
 }
 
 
-/*
-void Juego::comenzarJuego(){
+void Juego::elegirBando(){
+	int opcion;
+	std::cout << "Jugador 1, elija un bando:\n1)Personajes buenos\n2)Personajes malos\n";
+	cin >> opcion;
+	validarOpcion(opcion, 1, 2);
+	if (opcion == 1){
+		jugador1 = personajesBuenos;
+		jugador2 = personajesMalos;
+		std::cout << "Personaje1->Buenos" << std::endl;
+		jugador1->imprimirLista();
+	}
+	else{
+		jugador1 = personajesMalos;
+		jugador2 = personajesBuenos;
+		std::cout << "Personaje1->Malos" << std::endl;
+		jugador1->imprimirLista();
+
+	}
+}
+
+
+void Juego::comenzarJuego(Tablero* tablero){
+	cargarGrafos(tablero);
+	bool continuar = true;
 	elegirBando();
-	DecidirPrimerTurno();
-	jugar();
+	int primero = decidirPrimerTurno();
+	if (primero == 1){
+		while (continuar)
+			jugar(jugador1, jugador2, continuar, tablero);
+	}
+	else{
+		while (continuar)
+			jugar(jugador2, jugador1, continuar, tablero);
+	}
 }
 
-//Este debería variar dependiendo de quién empiece
-void Juego::jugar(){
-	personajesBuenos->reiniciarActual();
-	personajesMalos->reiniciarActual();
-	while (personajesBuenos->haySiguiente()){
-		mostrarMenu()
-		elegirOpcion(personajesBuenos->siguiente())
-	}
-	while (personajesMalos->haySiguiente()){
-		mostrarMenu()
-		elegirOpcion(personajesMalos->siguiente())
-	}
-	cambiarTurno();
+void Juego::cargarGrafos(Tablero* tablero){
+	grafoHumanos.crearMatrizAdyacencia(tablero);
+	grafoHumanos.cargarCaminosTablero(tablero, HUMANO);
+	grafoHumanos.calcularMatricesFloyd();
+
+	grafoCazadores.crearMatrizAdyacencia(tablero);
+	grafoCazadores.cargarCaminosTablero(tablero, CAZADOR);
+	grafoCazadores.calcularMatricesFloyd();
+
+	grafoVampiros.crearMatrizAdyacencia(tablero);
+	grafoVampiros.cargarCaminosTablero(tablero, VAMPIRO);
+	grafoVampiros.calcularMatricesFloyd();
+
+	grafoZombies.crearMatrizAdyacencia(tablero);
+	grafoZombies.cargarCaminosTablero(tablero, ZOMBIE);
+	grafoZombies.calcularMatricesFloyd();
+
+	//mostrarGrafos();
+}
+
+void Juego::mostrarGrafos(){
+	grafoHumanos.mostrarGrafo();
+	grafoCazadores.mostrarGrafo();
+	grafoVampiros.mostrarGrafo();
+	grafoZombies.mostrarGrafo();
+}
+
+int Juego::decidirPrimerTurno(){
+	int primero = rand() % (2 - 1 +1) + 1;
+	return primero;
 }
 
 
-void Juego::mostrarMenu(){
+void Juego::jugar(Lista<Ser*>* primerJugador, Lista<Ser*>* segundoJugador, bool &continuar, Tablero* tablero){
+	primerJugador->reiniciarActual();
+	segundoJugador->reiniciarActual();
+	cout << "--------PERSONAJES PRIMER JUGADOR--------\n";
+	while (primerJugador->haySiguiente()){
+		Ser* personajeAJugar = primerJugador->siguiente();
+		mostrarMenuPersonaje(personajeAJugar);
+		elegirOpcion(personajeAJugar, tablero);
+	}
+	cout << "--------PERSONAJES SEGUNDO JUGADOR--------\n";
+	while (segundoJugador->haySiguiente()){
+		Ser* personajeAJugar = segundoJugador->siguiente();
+		mostrarMenuPersonaje(personajeAJugar);
+		elegirOpcion(personajeAJugar, tablero);
+	}
+	//cambiarTurno();
+	preguntarSiDeseaContinuar(continuar);
+}
+
+void Juego::preguntarSiDeseaContinuar(bool &continuar){
+	int opcion = true;
+	std::cout << "\nDesea continuar?\n1) Si\n2) No" << std::endl;
+	cin >> opcion;
+	if (opcion == 2)
+		continuar = false;
+}
+
+void Juego::mostrarMenuPersonaje(Ser* personajeAJugar){
+	std::cout << std::endl;
+	personajeAJugar->mostrar();
 	std::cout << "Elija una opcion:\n"
 			"1) Atacar.\n"
 			"2) Defenderse.\n"
@@ -75,36 +146,99 @@ void Juego::mostrarMenu(){
 }
 
 
-void elegirOpcion(Ser* personaje){
+void Juego::elegirOpcion(Ser* personaje, Tablero* tablero){
+	tablero->mostrarTableroObjetos();
 	int opcion = pedirOpcion();
 	validarOpcion(opcion, OPCION_MINIMA, OPCION_MAXIMA);
 	if (opcion == 1)
-		atacar();
+		std::cout << "Ataco" << std::endl; //atacar(personaje, tablero); Le pregunta donde quiere atacar?
 	else if (opcion == 2)
-		defender();
+		std::cout << "Defiendo" << std::endl;//defender(personaje, tablero);
 	else if (opcion == 3)
-		moverse();
+		moverse(personaje, tablero);
 	else
-		pasar();
-
+		pasarTurno();
 }
 
-void validarOpcion(int &opcion,int opcionMinima,int opcionMaxima){
-	do{
-		std::cout << "Ingrese una opción entre " << opcionMinima << " y " << opcionMaxima << std::endl;
-		cin >> opcion;
-	}while (opcion < opcionMinima || opcion > opcionMaxima);
-}
+void Juego::pasarTurno(){}
 
-
-int pedirOpcion(){
+int Juego::pedirOpcion(){
 	int opcion;
-	std::cout << "Ingrese una opcion" << std::endl;
+	std::cout << "Ingrese una opcion: ";
 	cin >> opcion;
 	return opcion;
+}
+
+void Juego::validarOpcion(int &opcion,int opcionMinima,int opcionMaxima){
+	while (opcion < opcionMinima || opcion > opcionMaxima){
+		std::cout << "Ingrese una opción entre " << opcionMinima << " y " << opcionMaxima << std::endl;
+		cin >> opcion;
+	}
+}
+
+
+void Juego::moverse(Ser* personaje, Tablero* tablero){
+	int energiaNecesaria = 0;
+	Lista<Coordenadas*>* movimientos = new Lista<Coordenadas*>();
+	int posicionInicialX = personaje->obtenerColumna();
+	int posicionInicialY = personaje->obtenerFila();
+	int posicionFinalX;
+	int posicionFinalY;
+	obtenerNuevaPosicion(posicionFinalX, posicionFinalY);
+	if (! tablero->esPosicionValida(posicionFinalX, posicionFinalY) || tablero->obtenerCasillero(posicionFinalX, posicionFinalY)->hayPersonaje()){
+		std::cout << "La posición es inválida o está ocupada" << std::endl;
+	}
+	else{
+		if (personaje->obtenerSimbolo() == "h")
+			grafoHumanos.caminoMinimo(tablero->obtenerCasillero(posicionInicialX,posicionInicialY), tablero->obtenerCasillero(posicionFinalX, posicionFinalY), tablero, movimientos, energiaNecesaria);
+		else if (personaje->obtenerSimbolo() == "H" || personaje->obtenerSimbolo() == "W")
+			grafoCazadores.caminoMinimo(tablero->obtenerCasillero(posicionInicialX,posicionInicialY), tablero->obtenerCasillero(posicionFinalX, posicionFinalY), tablero, movimientos, energiaNecesaria);
+		else if (personaje->obtenerSimbolo() == "v" || personaje->obtenerSimbolo() == "N" || personaje->obtenerSimbolo() == "V")
+			grafoVampiros.caminoMinimo(tablero->obtenerCasillero(posicionInicialX,posicionInicialY), tablero->obtenerCasillero(posicionFinalX, posicionFinalY), tablero, movimientos, energiaNecesaria);
+		else
+			grafoZombies.caminoMinimo(tablero->obtenerCasillero(posicionInicialX,posicionInicialY), tablero->obtenerCasillero(posicionFinalX, posicionFinalY), tablero, movimientos, energiaNecesaria);
+	}
+	//if (energiaNecesaria > personaje->obtenerEnergia())
+	//	std::cout << "No hay energía suficiente para moverse a esa posición.\n";
+	if (! esCaminoValido(movimientos, tablero))
+		std::cout << "El camino está bloqueado\n";
+	else{
+		movimientos->reiniciarActual();
+		movimientos->siguiente(); //coord 4,4
+		while (movimientos->haySiguiente()){
+			tablero->mostrarTableroObjetos();
+			std::cout << std::endl;
+
+			Coordenadas* coordenadasActual = movimientos->siguiente(); //coord 4,5
+			tablero->obtenerCasillero(coordenadasActual->obtenerCoordenadaX(), coordenadasActual->obtenerCoordenadaY())->asignarPersonaje(personaje);
+			tablero->obtenerCasillero(personaje->obtenerColumna(), personaje->obtenerFila())->quitarPersonaje();
+			personaje->asignarColumna(coordenadasActual->obtenerCoordenadaX());
+			personaje->asignarFila(coordenadasActual->obtenerCoordenadaY());
+		}
+	}
 
 }
-*/
+
+bool Juego::esCaminoValido(Lista<Coordenadas*>* movimientos, Tablero* tablero){
+	bool esValido = true;
+	movimientos->reiniciarActual();
+	movimientos->siguiente();
+	while (movimientos->haySiguiente() && esValido == true){
+		Coordenadas* coordenadasActual = movimientos->siguiente();
+		if (tablero->obtenerCasillero(coordenadasActual->obtenerCoordenadaX(), coordenadasActual->obtenerCoordenadaY())->hayPersonaje())
+			esValido = false;
+	}
+	return esValido;
+}
+
+void Juego::obtenerNuevaPosicion(int &posicionX, int &posicionY){
+	std::cout << "Ingrese una posicionX: ";
+	std::cin >> posicionX;
+	std::cout << "Ingrese una posicionY: ";
+	std::cin >> posicionY;
+	posicionX--;
+	posicionY--;
+}
 
 Juego::~Juego(){
 	delete personajesBuenos;

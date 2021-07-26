@@ -141,7 +141,7 @@ void Menu::procesarOpcionSimulacion(Juego &nuevoJuego){
 
 	case SELECCIONAR_BANDO_SIMULACION:
 		std::cout << "SELECCIONANDO BANDO -(SIMULACION)-" << std::endl;
-		//nuevoJuego.comenzarJuego();
+		nuevoJuego.comenzarJuego(tablero);
 		break;
 
 	case SALIR_SIMULACION:
